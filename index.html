@@ -321,8 +321,9 @@ kbd{font:500 10.5px/1 inherit;padding:4px 6px;border-radius:6px;background:var(-
 .fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:0 0 22px 22px;overflow:hidden}
 .fc{aspect-ratio:3/4;background:var(--soft2);position:relative;overflow:hidden;cursor:pointer}
 .fc img{width:100%;height:100%;object-fit:cover;display:block}
-.fc.ph{background:repeating-linear-gradient(45deg,var(--soft) 0 8px,var(--soft2) 8px 16px);cursor:default}
-.fc.nov{display:flex;flex-direction:column;justify-content:flex-end;padding:9px;background:var(--soft)}
+.fc.ph{display:none}
+.fc.nov{display:flex;flex-direction:column;justify-content:flex-end;padding:9px;background:transparent;box-shadow:inset 0 0 0 1.5px var(--line, rgba(21,21,21,.12));border-radius:2px}
+.fc.nov.up::after{box-shadow:none}
 .fc.nov .t{font-size:11px;font-weight:500;line-height:1.3;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .fc .badge{position:absolute;top:6px;left:6px;font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:6px;background:rgba(255,255,255,.92);color:var(--ink)}
 .fc .pinb{position:absolute;top:6px;right:6px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center}
@@ -382,7 +383,7 @@ html{-webkit-text-size-adjust:100%}
 .spill:hover{transform:translateY(-2px)}
 .col.lieux{background:rgba(223,222,217,.55)}
 .col.lieux .col-h svg{opacity:.6}
-.pipe{display:grid;grid-template-columns:repeat(7,minmax(180px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px}
+.pipe{display:grid;grid-template-columns:repeat(7,minmax(250px,1fr));gap:12px;overflow-x:auto;padding-bottom:6px}
 .scard{background:#fff;border-radius:16px;padding:12px 14px;box-shadow:var(--sh);margin-bottom:10px;cursor:grab;display:flex;flex-direction:column;gap:6px;transition:transform .12s}
 .scard:hover{transform:translateY(-2px)}
 .scard.dragging{opacity:.35}
@@ -411,7 +412,10 @@ html{-webkit-text-size-adjust:100%}
 /* ---------- PV ---------- */
 .pvlist{display:flex;flex-direction:column;gap:8px}
 .setcol{display:flex;flex-direction:column;gap:12px;max-width:780px}
-.card.acc > .c-head{cursor:pointer;margin-bottom:14px;user-select:none}
+.card.acc > .c-head{cursor:pointer;margin-bottom:14px;user-select:none;justify-content:flex-start;min-height:30px}
+.card.acc > .c-head > .c-title{flex:1}
+.card.acc > .c-head > .stat{margin-left:auto}
+.setcol .card{padding:18px 22px}
 .card.acc > .c-head::after{content:'';width:8px;height:8px;border-right:1.6px solid var(--ink3);border-bottom:1.6px solid var(--ink3);transform:rotate(45deg) translateY(-3px);margin-left:12px;transition:transform .2s;flex-shrink:0}
 .card.acc.closed > .c-head{margin-bottom:0}
 .card.acc.closed > .c-head::after{transform:rotate(-45deg)}
@@ -454,6 +458,12 @@ html{-webkit-text-size-adjust:100%}
 .pchip.on{opacity:1}
 .pv-body{width:100%;min-height:380px;padding:22px 24px;border-radius:22px;background:#fff;box-shadow:var(--sh);font-size:14px;line-height:1.7;resize:vertical}
 .pv-hint{font-size:12px;color:var(--ink3);margin:8px 6px 0}
+.ph-logo{display:grid;place-items:center}.ph-logo img{width:46%;height:46%}
+.tg-h[data-a="tg-tog"]{cursor:pointer;user-select:none}
+.tg-h[data-a="tg-tog"]::after{content:'';width:7px;height:7px;border-right:1.5px solid var(--ink3);border-bottom:1.5px solid var(--ink3);transform:rotate(45deg) translateY(-2px);margin-left:4px;transition:transform .2s}
+.tgroup.closed .tg-h[data-a="tg-tog"]::after{transform:rotate(-45deg)}
+.pv-st{font-size:12px;color:var(--ink3);min-width:70px;text-align:right}
+.pvt .inc{font-size:10px;color:var(--warn);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
 .pv-ed{position:relative;background:#fff;border-radius:22px;box-shadow:var(--sh)}
 .pv-ed .pv-body,.pv-hl{font-family:inherit;font-size:14px;line-height:1.7;padding:22px 24px;letter-spacing:normal;word-spacing:normal;white-space:pre-wrap;overflow-wrap:break-word;word-break:normal;tab-size:4}
 .pv-ed .pv-body{position:relative;z-index:1;display:block;background:transparent;box-shadow:none;color:transparent;caret-color:var(--ink);overflow:hidden;resize:none;border-radius:22px}
@@ -784,7 +794,7 @@ const DEF_SETTINGS = {
   u: 0
 };
 const EXT_V = 3;
-const APP_V = 18;
+const APP_V = 19;
 const PV_V = 1;
 function showOld() { if ($('#oldv')) return; const d = document.createElement('div'); d.id = 'oldv'; d.className = 'oldv'; d.innerHTML = 'Une version plus récente du dashboard a été ouverte. Ferme cet onglet ou recharge la page pour ne rien écraser.'; document.body.appendChild(d); }
 const SP_V = 5;
@@ -1345,7 +1355,7 @@ const NAV = [
   { id: 'events', l: 'Événements', ic: 'flag' }, { id: 'sponsors', l: 'Sponsors', ic: 'award' }, { id: 'tasks', l: 'Tâches', ic: 'check' }, { id: 'pv', l: 'Réunions', ic: 'doc' }
 ];
 function go(v, extra = {}) {
-  if (UI.view === 'pv' && UI.pv && UI.pvDirty && v !== 'pv') { if (!confirm('Quitter la réunion sans enregistrer ?')) return; }
+  if (UI.view === 'pv' && UI.pv && v !== 'pv') pvAutosave(true);
   if (v !== 'pv') UI.pv = null;
   Object.assign(UI, { view: v }, extra);
   closeDrawer(); render(); window.scrollTo(0, 0);
@@ -1489,7 +1499,7 @@ function relState(d) {
    ========================================================= */
 
 function filteredContent() {
-  return live('content').filter(c => (UI.calCh === 'all' || (UI.calCh === 'feed' ? CH[c.ch] && CH[c.ch].feed : c.ch === UI.calCh)) && (UI.calWho === 'all' || c.who === UI.calWho));
+  return live('content').filter(c => (UI.calCh === 'all' || (UI.calCh === 'feed' ? isFeedC(c) : chList(c).includes(UI.calCh))) && (UI.calWho === 'all' || c.who === UI.calWho));
 }
 function vCal() {
   let o = `<div class="calbar"><div class="calnav">
@@ -1546,8 +1556,8 @@ function calMonth() {
 }
 function pill(c) {
   const e = ev(c.eventId), col = e ? evColor(e) : '#8A857C';
-  const st = c.ch === 'whatsapp' ? 'box-shadow:inset 3px 0 0 #25D366;' : '';
-  return `<div class="pill ${c.status === 'publie' ? 'done' : ''}" draggable="true" data-drag="content:${c.id}" data-a="open-content" data-id="${c.id}" style="${st}background:${rgba(col, .13)};color:${softText(col)}" data-tip="${esc(c.title)}"><span class="chl">${esc((CH[c.ch] || CH.other).l.slice(0, 2))}</span>${esc(c.title)}</div>`;
+  const st = chList(c).includes('whatsapp') ? 'box-shadow:inset 3px 0 0 #25D366;' : '';
+  return `<div class="pill ${c.status === 'publie' ? 'done' : ''}" draggable="true" data-drag="content:${c.id}" data-a="open-content" data-id="${c.id}" style="${st}background:${rgba(col, .13)};color:${softText(col)}" data-tip="${esc(c.title)}"><span class="chl">${esc(chList(c).map(k => (CH[k] || CH.other).l.slice(0, 2)).join('+'))}</span>${esc(c.title)}</div>`;
 }
 function calBoard() {
   const t = today(), from = addD(t, -30);
@@ -1559,7 +1569,7 @@ function calBoard() {
         return `<div class="bcard" draggable="true" data-drag="content:${x.id}" data-a="open-content" data-id="${x.id}">
           ${x.hasImg ? `<img class="bcard-img" data-img="${x.id}" alt="">` : ''}
           <div class="bcard-t">${esc(x.title)}</div>
-          <div class="bcard-m"><span class="tag">${fS(x.date)}</span><span class="tag">${esc((CH[x.ch] || CH.other).l)}</span>${e ? `<span class="dotc" style="background:${col}" data-tip="${esc(e.name)}"></span>` : ''}${w ? `<span class="lintw">${ic('alert', 12)}${w}</span>` : ''}${av(x.who, 's')}</div></div>`; }).join('') || '<div class="empty" style="font-size:12px">Glisse ici</div>'}
+          <div class="bcard-m"><span class="tag">${fS(x.date)}</span><span class="tag">${esc(chLabel(x))}</span>${e ? `<span class="dotc" style="background:${col}" data-tip="${esc(e.name)}"></span>` : ''}${w ? `<span class="lintw">${ic('alert', 12)}${w}</span>` : ''}${av(x.who, 's')}</div></div>`; }).join('') || '<div class="empty" style="font-size:12px">Glisse ici</div>'}
     </div>`; }).join('')}</div>`;
 }
 
@@ -1638,10 +1648,13 @@ function simulate(sim, excludeId) {
 /* =========================================================
    VIEW: FEED
    ========================================================= */
+function chList(c) { return c.chs && c.chs.length ? c.chs : [c.ch || 'post']; }
+function chLabel(c) { return chList(c).map(k => (CH[k] || CH.other).l).join(' + '); }
+function isFeedC(c) { return chList(c).some(k => CH[k] && CH[k].feed); }
 function vFeed() {
   loadIg();
   const t = today();
-  const sj = live('content').filter(c => CH[c.ch] && CH[c.ch].feed);
+  const sj = live('content').filter(isFeedC);
   const planned = sj.filter(c => c.status !== 'publie').sort((a, b) => (b.date || '').localeCompare(a.date || ''));
   const real = IG.data ? IG.data.posts.slice().sort((a, b) => (b.ts || '').localeCompare(a.ts || '')) : null;
   const pubSj = sj.filter(c => c.status === 'publie').sort((a, b) => (b.date || '').localeCompare(a.date || ''));
@@ -1652,7 +1665,7 @@ function vFeed() {
   const nPub = real ? real.length : pubSj.length;
   let o = head('Feed Insta', '', `<button class="fab-top" data-a="new-content" data-ch="post" data-tip="Nouveau post">${ic('plus', 20)}</button>`);
   o += `<div class="feedwrap"><div class="phone">
-    <div class="ph-head"><div class="ph-av">${IG.data && IG.data.pic ? `<div style="background:url('${esc(IG.data.pic)}') center/cover"></div>` : '<div>SJ</div>'}</div><div class="ph-stats"><div><b>${nPub}</b><span>publiés</span></div><div><b>${planned.length}</b><span>prévus</span></div><div><b>${IG.data && IG.data.followers ? IG.data.followers : sj.filter(c => c.pinned).length + '/3'}</b><span>${IG.data && IG.data.followers ? 'abonnés' : 'épinglés'}</span></div></div></div>
+    <div class="ph-head"><div class="ph-av">${IG.data && IG.data.pic ? `<div style="background:url('${esc(IG.data.pic)}') center/cover"></div>` : '<div class="ph-logo"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FscXVlXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE4NjguNzIgMTg3NC4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMS0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzYxLjc3LDY5MC43NmMxMTMuOTEtMTIzLjk5LDEzNC4zNS0zMzAuMzUsNTguMzQtNDc0LjAyQzE3NDMuOTMsNzIuNzcsMTU4MC4zNi0xNS4wNywxNDEyLjcxLDMuMDljLTEyMS42LDEzLjE3LTIyNS43Nyw2My4zOC0yOTYuMDUsMTY3LjUxLTMyLjgzLDQ4LjY0LTIwLjcsMTA0LjE1LDIzLjExLDEzNy45Nyw0Mi40NSwzMi43OCw4NS41NywyNy45NiwxMjkuOTctMTQuNzcsNy44Ny03LjU3LDE0Ljk2LTE1Ljk0LDIyLjUxLTIzLjg1LDY0LjkzLTY4LjAyLDE1OS45Mi04Ni4yLDI0NS4yNy00Ni45NiwxMjcuMDEsNTguMzksMTY2LjcsMjE0Ljc4LDg0LjU3LDMzOC4zMS0xMTguNDYsMTc4LjE4LTIzOC4xNywzNTUuNTQtMzU2LjkyLDUzMy41NC00MS4zMiw2MS45NC04MS4zNSwxMjQuNzMtMTIxLjk2LDE4Ny4xM002OTcuNzcsMTEzLjQzQzYxMi4yMiwyOS4yOCw1MDMuODUtNy4wMSwzODQuOCwxLjExLDExMy4yNywxOS42NS01NS44MSwyNjguNTksMTYuOTEsNTM4LjE0YzIzLjA5LDg1LjU4LDY1LjEzLDE1OC45OSwxNDEuNjcsMjA3LjU4LDQ2Ljc1LDI5LjY4LDEwMS4yMSwxOC42NiwxMzQuNzgtMjMuMjQsMjguOTItMzYuMDksMjUuNzktODkuOTUtOC0xMjguNzgtOS4yMS0xMC41OC0yMC4wOS0xOS42OS0yOS41Ny0zMC4wNS03My42OC04MC41My04MC45NC0xODAuNzktMTkuNzQtMjcwLDU4Ljg4LTg1Ljg0LDE2Mi4zMi0xMTYuNTIsMjYxLTc1LjM5LDI4LjY1LDExLjk0LDU2LjEsMjcuNjksODIuMjMsNDQuNTgsMTcwLjU2LDExMC4yNSwzNDAuNzcsMjIxLjA0LDUxMC43NCwzMzIuMTgsNzEuMzYsNDYuNjYsMTQxLjg3LDk0LjYzLDIxMi43NiwxNDJNMTA0NS43LDE2NDEuODRjNDIuNSw0My41Myw4Mi4wMyw5MS4yNywxMjkuOTIsMTI3Ljk4LDE0Mi43OCwxMDkuNDYsMzAwLjksMTM3Ljk4LDQ2NS43OCw1Ny4yNywxNTguNDktNzcuNTgsMjMzLjM2LTIxMS44NywyMjYuOTQtMzg3LjUtNC4zNi0xMTkuMi01Ni42NS0yMTkuMzMtMTQyLjQ0LTMwMC45Ny00Mi45Mi00MC44NC0xMDEuNzMtMzYuOTctMTQyLjc4LDQuMjctNDEuNTksNDEuNzgtNDIuMjYsODMuMjctMi4yOSwxMzIuNTUsMTkuNjEsMjQuMTksNDEuNjgsNDYuODksNTguMDIsNzMuMTMsNDUuMjYsNzIuNyw0NC4zOCwxNDguMzQsMy4zMywyMjIuMTUtMzkuOTQsNzEuODItMTA4LjE4LDEwMC43My0xODUuMzMsOTUuODUtNDYuMjItMi45My05NS4zMy0xOS40My0xMzUuNzYtNDIuNjUtMTAxLjQ3LTU4LjI5LTE5OS4wMi0xMjMuNDQtMjk3LjYzLTE4Ni42NC0xNDUuNzUtOTMuNDMtMjkxLjA1LTE4Ny41NS00MzYuNTQtMjgxLjM4TTEzNy40NSwxMTQ4Ljk4Yy03Ny41Niw3Ni4xMi0xMTkuMzgsMTY1LjU2LTEzMi43OSwyNzEuMjQtMjMuMzgsMTg0LjIxLDY4Ljk5LDM0NC43OCwyNDMuNDMsNDIxLjYsMTU5Ljg2LDcwLjQsMzY5Ljc2LDIyLjU0LDQ3OS40OC0xMDkuMzQsMzQuODUtNDEuODksMzYuMjgtOTYuNjEsMy40Ni0xMzIuMTYtMzMuNTMtMzYuMzEtODcuNzEtNDAuOTItMTMyLjIyLTkuOC0xOS4xNCwxMy4zOS0zNS44NCwzMC4yMS01NC42MSw0NC4xOS03NS43OCw1Ni40OS0xOTMuOTgsNTIuOTUtMjcxLjU5LTcuNTgtNzcuNDktNjAuNDQtMTAzLjM0LTE1OS45NS02Mi4wNi0yNTEuODIsMTUuODctMzUuMzIsMzcuMzEtNjguNDYsNTguNzktMTAwLjksMTMyLjcyLTIwMC40LDI2Ni4zLTQwMC4yMywzOTkuMjMtNjAwLjUsMTkuNDktMjkuMzYsMzYuOTctNjAuMDQsNTUuMzgtOTAuMTEiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTE0My4yLDEyODEuOTZjNDAuNjItNjIuNCw4MC42NS0xMjUuMTksMTIxLjk2LTE4Ny4xMywxMTguNzQtMTc4LDIzOC40NS0zNTUuMzUsMzU2LjkyLTUzMy41NCw4Mi4xMy0xMjMuNTMsNDIuNDQtMjc5LjkyLTg0LjU3LTMzOC4zMS04NS4zNS0zOS4yNC0xODAuMzQtMjEuMDYtMjQ1LjI3LDQ2Ljk2LTcuNTUsNy45MS0xNC42NCwxNi4yOC0yMi41MSwyMy44NS00NC4zOSw0Mi43NC04Ny41MSw0Ny41NS0xMjkuOTcsMTQuNzctNDMuODEtMzMuODItNTUuOTMtODkuMzMtMjMuMTEtMTM3Ljk3LDcwLjI3LTEwNC4xMywxNzQuNDQtMTU0LjM0LDI5Ni4wNS0xNjcuNTEsMTY3LjY2LTE4LjE2LDMzMS4yMiw2OS42OCw0MDcuNCwyMTMuNjUsNzYuMDIsMTQzLjY3LDU1LjU3LDM1MC4wMy01OC4zNCw0NzQuMDItMTE3LjI0LDEyNy42MS0yNDMuMDksMjQ3LjM2LTM2NS42MywzNzAuMSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMzAyLjc4LDczNy4wMmMtNzAuODktNDcuMzctMTQxLjQtOTUuMzQtMjEyLjc2LTE0Mi0xNjkuOTctMTExLjE1LTM0MC4xOC0yMjEuOTQtNTEwLjc0LTMzMi4xOC0yNi4xMy0xNi44OS01My41OC0zMi42NC04Mi4yMy00NC41OC05OC42OC00MS4xMy0yMDIuMTItMTAuNDQtMjYxLDc1LjM5LTYxLjE5LDg5LjIxLTUzLjkzLDE4OS40NywxOS43NCwyNzAsOS40OCwxMC4zNiwyMC4zNywxOS40NywyOS41NywzMC4wNSwzMy43OSwzOC44MywzNi45Miw5Mi43LDgsMTI4Ljc4LTMzLjU3LDQxLjktODguMDMsNTIuOTItMTM0Ljc4LDIzLjI0LTc2LjU0LTQ4LjU5LTExOC41OC0xMjEuOTktMTQxLjY3LTIwNy41OEMtNTUuODEsMjY4LjU5LDExMy4yNywxOS42NSwzODQuOCwxLjExYzExOS4wNS04LjEzLDIyNy40MiwyOC4xNywzMTIuOTcsMTEyLjMxLDE0OC4wOCwxNDUuNjUsMjkyLjMsMjk1LjIyLDQzNy45OCw0NDMuMzEiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNTg2LjkyLDExNTUuODljMTQ1LjQ5LDkzLjgzLDI5MC43OSwxODcuOTYsNDM2LjU0LDI4MS4zOCw5OC42LDYzLjIsMTk2LjE2LDEyOC4zNSwyOTcuNjMsMTg2LjY0LDQwLjQyLDIzLjIyLDg5LjU0LDM5LjczLDEzNS43Niw0Mi42NSw3Ny4xNCw0Ljg4LDE0NS4zOC0yNC4wMywxODUuMzMtOTUuODUsNDEuMDUtNzMuODEsNDEuOTMtMTQ5LjQ1LTMuMzMtMjIyLjE1LTE2LjM0LTI2LjI0LTM4LjQtNDguOTQtNTguMDItNzMuMTMtMzkuOTctNDkuMjgtMzkuMy05MC43NywyLjI5LTEzMi41NSw0MS4wNS00MS4yNCw5OS44Ny00NS4xMSwxNDIuNzgtNC4yNyw4NS43OCw4MS42NCwxMzguMDgsMTgxLjc3LDE0Mi40NCwzMDAuOTcsNi40MiwxNzUuNjMtNjguNDUsMzA5LjkyLTIyNi45NCwzODcuNS0xNjQuODgsODAuNzEtMzIzLDUyLjE5LTQ2NS43OC01Ny4yNy00Ny44OS0zNi43MS04Ny40Mi04NC40NS0xMjkuOTItMTI3Ljk4Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcyMy45NCw1ODMuOGMtMTguNDEsMzAuMDctMzUuODksNjAuNzUtNTUuMzgsOTAuMTEtMTMyLjkyLDIwMC4yNy0yNjYuNTEsNDAwLjEtMzk5LjIzLDYwMC41LTIxLjQ4LDMyLjQzLTQyLjkyLDY1LjU4LTU4Ljc5LDEwMC45LTQxLjI3LDkxLjg3LTE1LjQzLDE5MS4zOCw2Mi4wNiwyNTEuODIsNzcuNiw2MC41MywxOTUuOCw2NC4wNywyNzEuNTksNy41OCwxOC43Ni0xMy45OSwzNS40Ni0zMC44MSw1NC42MS00NC4xOSw0NC41MS0zMS4xMiw5OC42OS0yNi41MSwxMzIuMjIsOS44LDMyLjgyLDM1LjU1LDMxLjM5LDkwLjI3LTMuNDYsMTMyLjE2LTEwOS43MiwxMzEuODgtMzE5LjYyLDE3OS43NC00NzkuNDgsMTA5LjM0QzczLjY0LDE3NjUtMTguNzMsMTYwNC40Myw0LjY2LDE0MjAuMjNjMTMuNDItMTA1LjY4LDU1LjIzLTE5NS4xMywxMzIuNzktMjcxLjI0Ii8+PC9nPjwvc3ZnPg==" alt=""></div>'}</div><div class="ph-stats"><div><b>${nPub}</b><span>publiés</span></div><div><b>${planned.length}</b><span>prévus</span></div><div><b>${IG.data && IG.data.followers ? IG.data.followers : sj.filter(c => c.pinned).length + '/3'}</b><span>${IG.data && IG.data.followers ? 'abonnés' : 'épinglés'}</span></div></div></div>
     <div class="ph-name"><b>Silver Jersey</b><br><span class="muted">Strive for more.</span></div>
     <div class="ph-tabs">${[['all', 'Tout'], ['up', 'À publier'], ['pub', 'Publiés']].map(([k, l]) => `<button class="${UI.feedTab === k ? 'on' : ''}" data-a="feed-tab" data-v="${k}">${l}</button>`).join('')}</div>
     <div class="fgrid">`;
@@ -1718,7 +1731,7 @@ function vEvent() {
 
   o += `<div class="grid"><div class="s8" style="display:flex;flex-direction:column;gap:18px">`;
   o += `<div class="card"><div class="c-head"><div class="c-title">Plan de communication</div><button class="btn btn-light btn-sm" data-a="new-content" data-ev="${e.id}">${ic('plus', 14)}Contenu</button></div>`;
-  o += cont.length ? cont.map(x => `<div class="crow"><span class="crow-d">${fS(x.date)}</span><span class="tag">${esc((CH[x.ch] || CH.other).l)}</span><span class="crow-t" data-a="open-content" data-id="${x.id}">${esc(x.title)}</span>${x.hasImg ? ic('image', 14) : ''}${lint(x.caption).length ? `<span class="lintw">${ic('alert', 12)}</span>` : ''}
+  o += cont.length ? cont.map(x => `<div class="crow"><span class="crow-d">${fS(x.date)}</span><span class="tag">${esc(chLabel(x))}</span><span class="crow-t" data-a="open-content" data-id="${x.id}">${esc(x.title)}</span>${x.hasImg ? ic('image', 14) : ''}${lint(x.caption).length ? `<span class="lintw">${ic('alert', 12)}</span>` : ''}
       <select class="mini-sel" data-c="c-status" data-id="${x.id}" style="color:${statC(CSTAT, x.status)}">${CSTAT.map(([k, l]) => `<option value="${k}" ${x.status === k ? 'selected' : ''}>${l}</option>`).join('')}</select>${av(x.who, 's')}</div>`).join('') : `<div class="empty">Pas encore de plan. <button class="btn btn-dark btn-sm" data-a="gen-plan" data-id="${e.id}" style="margin-left:6px">${ic('wand', 14)}Générer</button></div>`;
   o += `</div>`;
   const hasAutoT = tks.some(x => x.auto);
@@ -1728,7 +1741,7 @@ function vEvent() {
   o += `<div class="card"><div class="c-head"><div class="c-title">Checklist logistique</div>${!cl.length ? `<button class="btn btn-light btn-sm" data-a="cl-std" data-id="${e.id}">${ic('list', 14)}Liste matériel standard</button>` : `<span class="c-sub">${cl.filter(x => x.done).length}/${cl.length}</span>`}</div>
     <div style="columns:2 260px;column-gap:20px">${cl.map(x => `<div class="cl-row ${x.done ? 'done' : ''}" style="break-inside:avoid"><span class="ck ${x.done ? 'on' : ''}" data-a="cl-toggle" data-id="${e.id}" data-cl="${x.id}"></span><span>${esc(x.t)}</span>${x.who ? av(x.who, 's') : ''}<button class="ibtn sm pinb ${inBase(e.type, x.t) ? 'on' : ''}" data-a="pin-cl" data-id="${e.id}" data-cl="${x.id}" data-tip="${inBase(e.type, x.t) ? 'Dans la base ' + esc(typeOf(e.type).label) : 'Garder pour les prochaines éditions'}">${ic('pin', 12)}</button><button class="ibtn sm x" data-a="cl-del" data-id="${e.id}" data-cl="${x.id}">${ic('x', 13)}</button></div>`).join('')}</div>
     <div class="qa inline" style="margin-top:8px">${ic('plus', 16)}<input data-k="cl-add" data-id="${e.id}" placeholder="Ajouter un élément, ex. Glacière @Axel"></div></div>`;
-  const ds = e.discuss || [], dOpen = ds.filter(x => !x.done);
+  const ds = (e.discuss || []).filter(x => !x.taskId), dOpen = ds.filter(x => !x.done);
   const ths = [...new Set(ds.map(x => x.th || ''))];
   o += `<div class="card"><div class="c-head"><div class="c-title">À discuter</div>${ds.length ? `<span class="c-sub">${dOpen.length} ouvert${dOpen.length > 1 ? 's' : ''}</span>` : ''}</div>
     ${ths.map(th => `${th ? `<div class="ds-th">${esc(th)}</div>` : ''}${ds.filter(x => (x.th || '') === th).map(x => `<div class="cl-row ds ${x.done ? 'done' : ''}"><span class="ck ${x.done ? 'on' : ''}" data-a="ds-toggle" data-id="${e.id}" data-ds="${x.id}" data-tip="Réglé"></span><span>${esc(x.t)}</span>${x.taskId ? `<span class="muted" style="font-size:11px">${ic('check', 11)} tâche</span>` : `<button class="ibtn sm" data-a="ds-task" data-id="${e.id}" data-ds="${x.id}" data-tip="En faire une tâche">${ic('right', 13)}</button>`}<button class="ibtn sm pinb ${inBase(e.type, x.t) ? 'on' : ''}" data-a="pin-txt" data-type="${e.type}" data-t="${esc(x.t)}" data-tip="${inBase(e.type, x.t) ? 'Dans la base' : 'Garder pour les prochaines éditions'}">${ic('pin', 12)}</button><button class="ibtn sm x" data-a="ds-del" data-id="${e.id}" data-ds="${x.id}">${ic('x', 13)}</button></div>`).join('')}`).join('')}
@@ -1814,6 +1827,7 @@ function spRow(s) {
 /* =========================================================
    VIEW: TASKS
    ========================================================= */
+function tkOpenState() { return LS.get('sj4:tko') || {}; }
 function vTasks() {
   const t = today(), soon = addD(t, 7);
   let base = live('tasks');
@@ -1827,19 +1841,23 @@ function vTasks() {
   if (UI.tkGroup === 'urgence') {
     groups.push(['En retard', open.filter(x => x.due && x.due < t), 'bad']);
     groups.push(["Aujourd'hui et cette semaine", open.filter(x => x.due && x.due >= t && x.due <= soon)]);
-    groups.push(['Plus tard', open.filter(x => x.due && x.due > soon)]);
     groups.push(['Sans date', open.filter(x => !x.due)]);
+    groups.push(['Plus tard', open.filter(x => x.due && x.due > soon), '', null, null, true]);
   } else if (UI.tkGroup === 'personne') {
-    members().forEach(m => groups.push([m.name, open.filter(x => whoList(x).includes(m.name)), '', m.name]));
-    groups.push(['Non assignées', open.filter(x => !x.who)]);
+    members().forEach(m => groups.push([m.name, open.filter(x => whoList(x).includes(m.name)), '', m.name, null, m.name !== UI.me]));
+    groups.push(['Non assignées', open.filter(x => !x.who), '', null, null, true]);
   } else {
-    live('events').sort(byDate).reverse().forEach(e => groups.push([e.name, open.filter(x => x.eventId === e.id), '', null, e]));
-    groups.push(['Général', open.filter(x => !x.eventId)]);
+    const evs = live('events').filter(e => open.some(x => x.eventId === e.id));
+    const upc = evs.filter(e => e.date >= t).sort(byDate), pst = evs.filter(e => e.date < t).sort(byDate).reverse();
+    [...upc, ...pst].forEach((e, i) => groups.push([e.name, open.filter(x => x.eventId === e.id), '', null, e, !(i === 0 && e.date >= t)]));
+    groups.push(['Général', open.filter(x => !x.eventId), '', null, null, true]);
   }
-  groups.forEach(([l, list, cls, who, e]) => {
+  const tko = tkOpenState();
+  groups.forEach(([l, list, cls, who, e, closedDef]) => {
     if (!list.length) return;
     list.sort((a, b) => (a.due || '9').localeCompare(b.due || '9'));
-    o += `<div class="tgroup"><div class="tg-h ${cls || ''}">${who ? av(who, 's') : ''}${e ? `<span class="dotc" style="background:${evColor(e)}"></span>` : ''}${esc(l)} <span class="n">${list.length}</span></div>${list.map(tkRow).join('')}</div>`;
+    const key = UI.tkGroup + ':' + l, isOpen = key in tko ? tko[key] : !closedDef;
+    o += `<div class="tgroup ${isOpen ? '' : 'closed'}"><div class="tg-h ${cls || ''}" data-a="tg-tog" data-k="${esc(key)}" data-o="${isOpen ? 1 : 0}">${who ? av(who, 's') : ''}${e ? `<span class="dotc" style="background:${evColor(e)}"></span>` : ''}${esc(l)} <span class="n">${list.length}</span></div>${isOpen ? list.map(tkRow).join('') : ''}</div>`;
   });
   if (!open.length) o += `<div class="card"><div class="empty">Tout est fait</div></div>`;
   if (UI.tkDone && done.length) o += `<div class="tgroup" style="margin-top:20px"><div class="tg-h">Faites <span class="n">${done.length}</span></div>${done.slice(0, 40).map(tkRow).join('')}</div>`;
@@ -1849,7 +1867,7 @@ function tkRow(x) {
   const t = today(), e = ev(x.eventId), late = x.due && x.due < t && x.status !== 'done';
   return `<div class="trow"><span class="ck ${x.status === 'done' ? 'on' : x.status === 'doing' ? 'half' : ''}" data-a="tk-toggle" data-id="${x.id}" data-tip="Clic : fait. Maj+clic : en cours"></span>
     <div class="tb" data-a="open-task" data-id="${x.id}"><div class="tt ${x.status === 'done' ? 'done' : ''}">${esc(x.title)}</div>
-    <div class="tm">${whoList(x).length ? `<span><span class="avs">${whoList(x).map(n => av(n, 's')).join('')}</span>${esc(whoList(x).join(', '))}</span>` : '<span>Non assignée</span>'}${x.due ? `<span class="${late ? 'bad' : ''}">${ic('clock', 11)} ${fS(x.due)}${late ? ', ' + Math.abs(diff(x.due, t)) + ' j de retard' : ''}</span>` : ''}${e ? `<span class="tag" style="background:${rgba(evColor(e), .14)};color:${softText(evColor(e))}">${esc(e.name)}</span>` : ''}${x.status === 'doing' ? '<span class="tag" style="color:var(--warn)">en cours</span>' : ''}${x.pvId ? `<span>${ic('doc', 11)}</span>` : ''}</div></div></div>`;
+    <div class="tm">${whoList(x).length ? `<span><span class="avs">${whoList(x).map(n => av(n, 's')).join('')}</span>${esc(whoList(x).join(', '))}</span>` : '<span>Non assignée</span>'}${x.due ? `<span class="${late ? 'bad' : ''}">${ic('clock', 11)} ${fS(x.due)}${late ? ', ' + Math.abs(diff(x.due, t)) + ' j de retard' : ''}</span>` : ''}${e ? `<span class="tag" style="background:${rgba(evColor(e), .14)};color:${softText(evColor(e))}">${esc(e.name)}</span>` : ''}${x.status === 'doing' ? '<span class="tag" style="color:var(--warn)">en cours</span>' : ''}${x.pvId && !x.who && x.status !== 'done' ? '<span class="tag" style="color:var(--warn)">à compléter</span>' : ''}${x.pvId ? `<span>${ic('doc', 11)}</span>` : ''}</div></div></div>`;
 }
 
 /* =========================================================
@@ -2201,7 +2219,7 @@ function pvEditor() {
   const p = UI.pv;
   const open = live('tasks').filter(x => x.status !== 'done');
   let o = `<div class="row" style="justify-content:space-between;flex-wrap:wrap;margin-bottom:10px"><button class="btn btn-ghost btn-sm" data-a="pv-back">${ic('left', 14)}Réunions</button>
-    <div class="h-actions"><div class="seg"><button class="${UI.pvMode !== 'view' ? 'on' : ''}" data-a="pv-mode" data-m="edit">Notes</button><button class="${UI.pvMode === 'view' ? 'on' : ''}" data-a="pv-mode" data-m="view">Aperçu</button></div><button class="btn btn-light btn-sm" data-a="pv-format" data-tip="Range les notes par thème et regroupe les tâches par personne">${ic('wand', 14)}<span class="bt">Mettre en forme</span></button><button class="btn btn-light btn-sm" data-a="pv-wa" data-tip="Copier pour WhatsApp">${ic('msg', 14)}<span class="bt">Copier pour WhatsApp</span></button><button class="btn btn-light btn-sm" data-a="pv-pdf">${ic('print', 14)}<span class="bt">PDF</span></button>${p._new ? '' : `<button class="ibtn" data-a="pv-del" data-tip="Supprimer">${ic('trash', 16)}</button>`}<button class="btn btn-dark" data-a="pv-save">Enregistrer</button></div></div>`;
+    <div class="h-actions"><div class="seg"><button class="${UI.pvMode !== 'view' ? 'on' : ''}" data-a="pv-mode" data-m="edit">Notes</button><button class="${UI.pvMode === 'view' ? 'on' : ''}" data-a="pv-mode" data-m="view">Aperçu</button></div><button class="btn btn-light btn-sm" data-a="pv-format" data-tip="Range les notes par thème et regroupe les tâches par personne">${ic('wand', 14)}<span class="bt">Mettre en forme</span></button><button class="btn btn-light btn-sm" data-a="pv-wa" data-tip="Copier pour WhatsApp">${ic('msg', 14)}<span class="bt">Copier pour WhatsApp</span></button><button class="btn btn-light btn-sm" data-a="pv-pdf">${ic('print', 14)}<span class="bt">PDF</span></button>${p._new ? '' : `<button class="ibtn" data-a="pv-del" data-tip="Supprimer">${ic('trash', 16)}</button>`}<span class="pv-st" id="pv-st">${p._new ? '' : 'Enregistré'}</span></div></div>`;
   o += `<input class="pv-title" data-i="pv-title" value="${esc(p.title)}" placeholder="Titre de la réunion">
     <div class="pv-meta"><input class="f" type="date" data-i="pv-date" value="${p.date}"><select class="f" data-c="pv-ev"><option value="">Aucun event lié</option>${live('events').sort(byDate).reverse().map(e => `<option value="${e.id}" ${p.eventId === e.id ? 'selected' : ''}>${esc(e.name)}</option>`).join('')}</select>
     ${members().map(m => `<span class="pchip ${(p.present || []).includes(m.name) ? 'on' : ''}" data-a="pv-present" data-n="${esc(m.name)}">${av(m.name, 's')}${esc(m.name)}</span>`).join('')}</div>`;
@@ -2248,7 +2266,7 @@ function pvTasksRefresh() {
   const all = pvAllTasks(p, true), on = all.filter(x => !x.off), off = all.filter(x => x.off);
   $('#pvt-n').textContent = on.length;
   const whoSel = x => `<select class="pvt-who ${x.who ? '' : 'none'}" data-c="pvt-who" data-key="${esc(x.key)}">${x.who ? '' : '<option value="">Qui ?</option>'}${members().map(m => `<option ${x.who === m.name ? 'selected' : ''}>${esc(m.name)}</option>`).join('')}${x.who ? '<option value="">Personne</option>' : ''}</select>`;
-  el.innerHTML = (on.length ? on.map(x => { const i = all.indexOf(x); return `<div class="pvt ${x.src === 'body' && !x.who && !x.done ? 'todo' : ''} ${x.done ? 'isdone' : ''}">${x.src === 'body' && !p.legacy ? whoSel(x) : av(x.who, 's')}${(x.also || []).map(n => av(n, 's')).join('')}<div class="d">${esc(x.text)}</div>${x.due ? `<small>${fS(x.due)}</small>` : ''}${x.done ? `<span class="src" style="color:var(--ok, #16A34A)" data-tip="Déjà fait, sera cochée">${ic('check', 11)} fait</span>` : ''}${x.taskId ? `<span class="src" data-tip="${x.dup ? 'Existe déjà dans Tâches, pas de doublon' : 'Déjà dans Tâches'}">${x.dup ? 'existe' : ic('check', 11)}</span>` : ''}${p.eventId && ev(p.eventId) && !x.archived ? `<button class="ibtn sm pinb ${inBase(ev(p.eventId).type, x.text) ? 'on' : ''}" data-a="pin-txt" data-type="${ev(p.eventId).type}" data-t="${esc(x.text)}" data-tip="Garder pour les prochaines éditions">${ic('pin', 12)}</button>` : ''}${x.archived ? '<span class="src">archive</span>' : x.src === 'body' ? (p.legacy ? '<span class="src">notes</span>' : `<button class="ibtn sm" data-a="pvt-off" data-key="${esc(x.key)}" data-tip="Pas une tâche">${ic('x', 12)}</button>`) : `<button class="ibtn sm" data-a="pvt-del" data-i="${i}">${ic('x', 12)}</button>`}</div>`; }).join('') : '<div class="empty" style="padding:8px">Aucune tâche</div>')
+  el.innerHTML = (on.length ? on.map(x => { const i = all.indexOf(x); return `<div class="pvt ${x.src === 'body' && !x.who && !x.done ? 'todo' : ''} ${x.done ? 'isdone' : ''}">${x.src === 'body' && !p.legacy ? whoSel(x) : av(x.who, 's')}${(x.also || []).map(n => av(n, 's')).join('')}<div class="d">${esc(x.text)}</div>${x.due ? `<small>${fS(x.due)}</small>` : ''}${!x.done && !x.archived && (!x.who || x.text.trim().split(/\s+/).length < 2) ? '<span class="inc">à compléter</span>' : ''}${x.done ? `<span class="src" style="color:var(--ok, #16A34A)" data-tip="Déjà fait, sera cochée">${ic('check', 11)} fait</span>` : ''}${x.taskId ? `<span class="src" data-tip="${x.dup ? 'Existe déjà dans Tâches, pas de doublon' : 'Déjà dans Tâches'}">${x.dup ? 'existe' : ic('check', 11)}</span>` : ''}${p.eventId && ev(p.eventId) && !x.archived ? `<button class="ibtn sm pinb ${inBase(ev(p.eventId).type, x.text) ? 'on' : ''}" data-a="pin-txt" data-type="${ev(p.eventId).type}" data-t="${esc(x.text)}" data-tip="Garder pour les prochaines éditions">${ic('pin', 12)}</button>` : ''}${x.archived ? '<span class="src">archive</span>' : x.src === 'body' ? (p.legacy ? '<span class="src">notes</span>' : `<button class="ibtn sm" data-a="pvt-off" data-key="${esc(x.key)}" data-tip="Pas une tâche">${ic('x', 12)}</button>`) : `<button class="ibtn sm" data-a="pvt-del" data-i="${i}">${ic('x', 12)}</button>`}</div>`; }).join('') : '<div class="empty" style="padding:8px">Aucune tâche</div>')
     + (off.length ? `<button class="c-link" data-a="pvt-on" style="font-size:12px;margin:4px 2px">${plural(off.length, 'ligne ignorée', 'lignes ignorées')}, rétablir</button>` : '');
 }
 function atNames(txt) {
@@ -2308,6 +2326,52 @@ function applyVias(p) {
     else { const act = /contact|relanc|^va |^doit /i.test(v.rest); put('sponsors', { id: uid('sp'), name: nm, ref: v.ref, kind: 'one', cat: 'produit', status: 'todo', contact: '', contactInfo: '', contribution: act ? '' : v.rest.replace(/^[-–>\s]+/, ''), value: 0, counterparts: [], relance: '', events: [], notes: `Ajouté depuis la réunion du ${fS(p.date)}` }); cr++; }
   });
   return { up, cr };
+}
+function pvDirtyNow() { UI.pvDirty = true; const st = $('#pv-st'); if (st) st.textContent = '...'; clearTimeout(pvAutosave._t); pvAutosave._t = setTimeout(() => pvAutosave(), 1500); }
+function pvSyncTasks(p) {
+  const all = pvAllTasks(p, true), prev = (p.tasks || []).filter(x => x.taskId);
+  const alive = id => id && live('tasks').find(t => t.id === id);
+  const snapOk = (t, sn) => t && sn && t.title === sn.title && (t.who || null) === (sn.who || null) && (t.due || '') === (sn.due || '');
+  const used = new Set(), out = []; let created = 0, dups = 0;
+  all.forEach(x => {
+    if (x.archived || x.off) { out.push({ ...x, taskId: x.archived ? x.taskId : null }); return; }
+    let tid = alive(x.taskId) && !used.has(x.taskId) ? x.taskId : null, sn = tid ? (prev.find(y => y.taskId === tid) || {}).snap : null;
+    if (tid && x.dup) sn = null;
+    if (!tid) {
+      const nx = PVX.nrm(x.text);
+      const o = prev.find(y => !used.has(y.taskId) && alive(y.taskId) && !all.some(z => z !== x && z.taskId === y.taskId) && (nx.startsWith(PVX.nrm(y.text)) || PVX.nrm(y.text).startsWith(nx) || sameTask(y.text, x.text)));
+      if (o) { tid = o.taskId; sn = o.snap; }
+    }
+    if (!tid) { const d = findDupTask(x.text); if (d && !used.has(d.id)) { tid = d.id; sn = null; dups++; } }
+    const f = { title: x.text, who: x.who || null, also: x.also || [], due: x.due || '' };
+    if (tid) {
+      const t = alive(tid);
+      if (snapOk(t, sn) && (t.title !== f.title || (t.who || null) !== f.who || (t.due || '') !== f.due || JSON.stringify(t.also || []) !== JSON.stringify(f.also))) patch('tasks', tid, f);
+      if (x.done && t.status !== 'done') patch('tasks', tid, { status: 'done' });
+    } else {
+      const tk = put('tasks', { id: uid('tk'), ...f, status: x.done ? 'done' : 'todo', eventId: p.eventId || null, notes: `Issue de la réunion du ${fS(p.date)}`, pvId: p.id });
+      tid = tk.id; sn = f; created++;
+    }
+    used.add(tid);
+    const t2 = alive(tid);
+    out.push({ ...x, taskId: tid, snap: sn ? { title: t2.title, who: t2.who || null, due: t2.due || '' } : null });
+  });
+  prev.forEach(y => { if (used.has(y.taskId)) return; const t = alive(y.taskId); if (t && t.pvId === p.id && t.status !== 'done' && snapOk(t, y.snap)) { t._del = 1; t.u = Date.now(); touch('tasks'); } });
+  p.tasks = out;
+  return { created, dups };
+}
+function pvAutosave(final) {
+  clearTimeout(pvAutosave._t);
+  const p = UI.pv; if (!p) return;
+  if (!UI.pvDirty) return;
+  if (p._new && !(p.body || '').trim() && !(p.title || '').trim()) return;
+  pvSyncTasks(p);
+  const rec = JSON.parse(JSON.stringify(p)); delete rec._new;
+  if (!rec.title.trim()) rec.title = 'Réunion du ' + fS(rec.date);
+  put('pvs', rec); p._new = false; UI.pvDirty = false;
+  if (final && !p.legacy) applyVias(p);
+  const st = $('#pv-st'); if (st) st.textContent = 'Enregistré';
+  if (UI.pv === p) setTimeout(pvTasksRefresh, 0);
 }
 function savePv() {
   const p = UI.pv;
@@ -2384,7 +2448,7 @@ function mDay(d) {
   const item = (a, id, col, t, s) => `<div class="ddi" data-a="${a}" data-id="${id}"><span class="bar" style="background:${col}"></span><div><b>${esc(t)}</b><small>${s}</small></div></div>`;
   modal(`<div class="m-h"><span class="m-t">${fL(d)}</span><button class="ibtn" data-a="close">${ic('x')}</button></div><div class="m-b">
     ${evs.map(e => item('open-event', e.id, evColor(e), e.name, esc(e.location || 'Event'))).join('')}
-    ${cont.map(c => { const e = ev(c.eventId); return item('open-content', c.id, e ? evColor(e) : '#8A857C', c.title, `${(CH[c.ch] || CH.other).l}, ${statL(CSTAT, c.status)}${c.who ? ', ' + esc(c.who) : ''}`); }).join('')}
+    ${cont.map(c => { const e = ev(c.eventId); return item('open-content', c.id, e ? evColor(e) : '#8A857C', c.title, `${chLabel(c)}, ${statL(CSTAT, c.status)}${c.who ? ', ' + esc(c.who) : ''}`); }).join('')}
     ${tks.map(x => item('open-task', x.id, mColor(x.who), x.title, 'Tâche' + (x.who ? ', ' + esc(x.who) : ''))).join('')}
     ${ex.map(x => `<div class="ddi" style="cursor:default"><span class="bar" style="background:${statC(XT, x.type)}"></span><div><b>${esc(x.label)}</b><small>${statL(XT, x.type)}</small></div></div>`).join('')}
     ${!evs.length && !cont.length && !tks.length && !ex.length ? '<div class="empty">Rien ce jour-là</div>' : ''}
@@ -2397,12 +2461,12 @@ function mContent(id, def = {}) {
   const isNew = !id;
   const c = isNew ? { id: uid('ct'), title: '', eventId: def.eventId || null, ch: def.ch || 'post', date: def.date || today(), time: '', status: 'idee', who: UI.me || null, caption: '', canva: '', pinned: false, hasImg: false, notes: '', auto: false } : JSON.parse(JSON.stringify(live('content').find(x => x.id === id)));
   if (!c) return;
-  pendingImg = null; pendingImgDel = false; mState = { ch: c.ch, status: c.status };
+  pendingImg = null; pendingImgDel = false; mState = { ch: c.ch, chs: [...chList(c)], status: c.status };
   const isFeed = ch => CH[ch] && CH[ch].feed;
   modal(`<div class="m-h"><span class="m-t">${isNew ? 'Nouveau contenu' : (c.auto ? 'Contenu (plan auto)' : 'Contenu')}</span><button class="ibtn" data-a="close">${ic('x')}</button></div>
   <div class="m-b"><input class="big" name="title" value="${esc(c.title)}" placeholder="Titre du contenu" ${isNew ? 'autofocus' : ''}>
   <div class="mcols"><div>
-    <div class="fg"><label class="fl">Canal</label><div class="opts" data-group="ch">${Object.entries(CH).map(([k, v]) => `<button class="opt ${c.ch === k ? 'on' : ''}" data-a="opt" data-g="ch" data-v="${k}">${v.l}</button>`).join('')}</div></div>
+    <div class="fg"><label class="fl">Canal</label><div class="opts" id="ch-opts">${Object.entries(CH).map(([k, v]) => `<button class="opt ${chList(c).includes(k) ? 'on' : ''}" data-a="ch-tog" data-v="${k}">${v.l}</button>`).join('')}</div></div>
     <div class="fg"><label class="fl">Statut</label><div class="opts">${CSTAT.map(([k, l, col]) => `<button class="opt ${c.status === k ? 'on' : ''}" data-a="opt" data-g="status" data-v="${k}"><span class="dotc" style="background:${col}"></span>${l}</button>`).join('')}</div></div>
     <div class="f3"><div class="fg"><label class="fl">Date</label><input class="fi" type="date" name="date" value="${c.date}"></div><div class="fg"><label class="fl">Heure</label><input class="fi" type="time" name="time" value="${esc(c.time || '')}"></div>
       <div class="fg"><label class="fl">Responsable</label><select class="fi" name="who"><option value="">Personne</option>${members().map(m => `<option ${c.who === m.name ? 'selected' : ''}>${esc(m.name)}</option>`).join('')}</select></div></div>
@@ -2412,7 +2476,7 @@ function mContent(id, def = {}) {
   </div><div>
     <div class="fg"><label class="fl">Visuel</label><div class="drop" id="drop" data-a="pick-img">${c.hasImg ? `<img data-img="${c.id}" alt="">` : `${ic('image', 26)}<span>Glisse une image<br>ou clique</span>`}${c.hasImg ? `<div class="drop-acts"><button data-a="pick-img">Remplacer</button><button data-a="rm-img">Retirer</button></div>` : ''}</div></div>
     <div class="fg"><label class="fl">Lien Canva</label><div class="row"><input class="fi" name="canva" value="${esc(c.canva || '')}" placeholder="https://www.canva.com/design/...">${c.canva ? `<a class="ibtn" href="${esc(c.canva)}" target="_blank" rel="noopener" data-tip="Ouvrir">${ic('ext', 16)}</a>` : ''}</div></div>
-    <div class="fg" id="pin-wrap" style="${isFeed(c.ch) ? '' : 'display:none'}"><label class="f-check row" style="font-size:13px;cursor:pointer"><span class="ck ${c.pinned ? 'on' : ''}" data-a="toggle-pin" id="pin-ck"></span>Épingler dans le feed</label></div>
+    <div class="fg" id="pin-wrap" style="${isFeedC(c) ? '' : 'display:none'}"><label class="f-check row" style="font-size:13px;cursor:pointer"><span class="ck ${c.pinned ? 'on' : ''}" data-a="toggle-pin" id="pin-ck"></span>Épingler dans le feed</label></div>
   </div></div></div>
   <div class="m-f"><div>${isNew ? '' : `<button class="ibtn" data-a="del-content" data-id="${c.id}" data-tip="Supprimer">${ic('trash', 16)}</button><button class="btn btn-ghost btn-sm" data-a="dup-content" data-id="${c.id}">${ic('copy', 14)}Dupliquer</button>`}${c.caption ? `<button class="btn btn-ghost btn-sm" data-a="copy-caption">${ic('copy', 14)}Copier la caption</button>` : ''}</div>
   <div><button class="btn btn-ghost" data-a="close">Annuler</button><button class="btn btn-dark" data-a="save-content" data-id="${c.id}" data-new="${isNew ? 1 : ''}">Enregistrer</button></div></div>`, 'wide');
@@ -2442,7 +2506,8 @@ function compress(file, max = 1080, q = .82) {
 }
 async function saveContent(id, isNew) {
   const c = mState.rec;
-  Object.assign(c, { title: mv('title').trim(), ch: mState.ch, status: mState.status, date: mv('date'), time: mv('time'), who: mv('who') || null, eventId: mv('eventId') || null, caption: mv('caption'), canva: mv('canva').trim(), notes: mv('notes'), pinned: !!(CH[mState.ch] && CH[mState.ch].feed && $('#pin-ck') && $('#pin-ck').classList.contains('on')) });
+  if (!(mState.chs || []).length) return toast('Choisis au moins un canal');
+  Object.assign(c, { title: mv('title').trim(), ch: mState.chs[0], chs: [...mState.chs], status: mState.status, date: mv('date'), time: mv('time'), who: mv('who') || null, eventId: mv('eventId') || null, caption: mv('caption'), canva: mv('canva').trim(), notes: mv('notes'), pinned: !!(mState.chs.some(k => CH[k] && CH[k].feed) && $('#pin-ck') && $('#pin-ck').classList.contains('on')) });
   if (!c.title) return toast('Ajoute un titre');
   if (!c.date) return toast('Ajoute une date');
   if (c.pinned && live('content').filter(x => x.pinned && x.id !== c.id).length >= 3) return toast('3 posts épinglés maximum');
@@ -2683,7 +2748,7 @@ const ACT = {
   'open-content': el => mContent(el.dataset.id),
   'open-task': el => mTask(el.dataset.id),
   'open-sponsor': el => mSponsor(el.dataset.id),
-  'open-pv': el => { if (UI.pv && UI.pvDirty && !confirm('Quitter la réunion sans enregistrer ?')) return; openPv(el.dataset.id); },
+  'open-pv': el => { if (UI.pv) pvAutosave(true); openPv(el.dataset.id); },
   'day': el => mDay(el.dataset.d),
   'new-content': el => mContent(null, { eventId: el.dataset.ev || null, ch: el.dataset.ch || 'post' }),
   'new-content-d': el => mContent(null, { date: el.dataset.d }),
@@ -2729,16 +2794,18 @@ const ACT = {
   'pick-logo': () => $('#file-logo').click(),
   'rm-logo': el => { mState.logo = null; mState.logoDel = true; el.remove(); spLogoRefresh(); },
   'pv-mode': el => { UI.pvMode = el.dataset.m; render(); },
-  'pv-detect': () => { UI.pv.legacy = false; UI.pvDirty = true; render(); toast('Détection activée'); },
-  'pvt-off': el => { const p = UI.pv; p.ovr = p.ovr || {}; p.ovr[el.dataset.key] = { ...(p.ovr[el.dataset.key] || {}), off: true }; UI.pvDirty = true; pvTasksRefresh(); if (UI.pvMode === 'view') render(); },
-  'pvt-on': () => { const p = UI.pv; Object.values(p.ovr || {}).forEach(o => delete o.off); UI.pvDirty = true; pvTasksRefresh(); if (UI.pvMode === 'view') render(); },
-  'pv-format': () => { if (UI.pvMode === 'view') { UI.pvMode = 'edit'; render(); } const ta = $('[data-i="pv-body"]'); const prev = UI.pv.body, prevT = UI.pv.title, prevL = UI.pv.legacy; UI.pv.legacy = false; const r0 = PVX.harmonize(prev, members().map(m => m.name), today(), knownNames(), UI.pv.ovr); const offK = Object.keys(UI.pv.ovr || {}).filter(k => UI.pv.ovr[k].off); const r = { text: r0.text, n: r0.n }; if (r0.title && !UI.pv.title.trim()) { UI.pv.title = r0.title; const ti = $('[data-i="pv-title"]'); if (ti) ti.value = r0.title; } if (r.text === prev.trim()) { UI.pv.legacy = prevL; return toast('Déjà en forme'); } if (r.text === prev.trim()) return toast('Rien à mettre en forme'); UI.pv.body = r.text; ta.value = r.text; UI.pvDirty = true; pvTasksRefresh(); toast(r.n ? `Mis en forme, ${plural(r.n, 'tâche détectée', 'tâches détectées')}` : 'Mis en forme', { action: 'Annuler', ms: 15000, fn: () => { UI.pv.body = prev; UI.pv.title = prevT; UI.pv.legacy = prevL; render(); } }); },
+  'pv-detect': () => { UI.pv.legacy = false; pvDirtyNow(); render(); toast('Détection activée'); },
+  'pvt-off': el => { const p = UI.pv; p.ovr = p.ovr || {}; p.ovr[el.dataset.key] = { ...(p.ovr[el.dataset.key] || {}), off: true }; pvDirtyNow(); pvTasksRefresh(); if (UI.pvMode === 'view') render(); },
+  'pvt-on': () => { const p = UI.pv; Object.values(p.ovr || {}).forEach(o => delete o.off); pvDirtyNow(); pvTasksRefresh(); if (UI.pvMode === 'view') render(); },
+  'pv-format': () => { if (UI.pvMode === 'view') { UI.pvMode = 'edit'; render(); } const ta = $('[data-i="pv-body"]'); const prev = UI.pv.body, prevT = UI.pv.title, prevL = UI.pv.legacy; UI.pv.legacy = false; const r0 = PVX.harmonize(prev, members().map(m => m.name), today(), knownNames(), UI.pv.ovr); const offK = Object.keys(UI.pv.ovr || {}).filter(k => UI.pv.ovr[k].off); const r = { text: r0.text, n: r0.n }; if (r0.title && !UI.pv.title.trim()) { UI.pv.title = r0.title; const ti = $('[data-i="pv-title"]'); if (ti) ti.value = r0.title; } if (r.text === prev.trim()) { UI.pv.legacy = prevL; return toast('Déjà en forme'); } if (r.text === prev.trim()) return toast('Rien à mettre en forme'); UI.pv.body = r.text; ta.value = r.text; pvDirtyNow(); pvTasksRefresh(); toast(r.n ? `Mis en forme, ${plural(r.n, 'tâche détectée', 'tâches détectées')}` : 'Mis en forme', { action: 'Annuler', ms: 15000, fn: () => { UI.pv.body = prev; UI.pv.title = prevT; UI.pv.legacy = prevL; render(); } }); },
   'sim-clear': () => { UI.sim.date = ''; render(); },
   'sim-create': () => mEvent(null, { date: UI.sim.date, win: UI.sim.win }),
   'feed-tab': el => { UI.feedTab = el.dataset.v; render(); },
   'sp-mode': el => { UI.spMode = el.dataset.m; render(); },
   'tk-group': el => { UI.tkGroup = el.dataset.g; render(); },
   'who-tog': el => { const v = el.dataset.v; let w = mState.whos || []; w = !v ? [] : (w.includes(v) ? w.filter(x => x !== v) : [...w, v]); mState.whos = w; $$('#who-opts .opt').forEach(b => b.classList.toggle('on', b.dataset.v ? w.includes(b.dataset.v) : !w.length)); },
+  'ch-tog': el => { const v = el.dataset.v; let w = mState.chs || []; w = w.includes(v) ? w.filter(x => x !== v) : [...w, v]; mState.chs = w; $$('#ch-opts .opt').forEach(b => b.classList.toggle('on', w.includes(b.dataset.v))); const pw = $('#pin-wrap'); if (pw) pw.style.display = w.some(k => CH[k] && CH[k].feed) ? '' : 'none'; },
+  'tg-tog': el => { const s2 = tkOpenState(); s2[el.dataset.k] = el.dataset.o !== '1'; LS.set('sj4:tko', s2); render(); },
   'tk-mine': () => { UI.tkMine = !UI.tkMine; render(); },
   'tk-done': () => { UI.tkDone = !UI.tkDone; render(); },
   'tk-toggle': (el, e) => toggleTask(el.dataset.id, e.shiftKey),
@@ -2756,15 +2823,15 @@ const ACT = {
   'cl-del': el => { const e = ev(el.dataset.id); patch('events', e.id, { checklist: (e.checklist || []).filter(x => x.id !== el.dataset.cl) }); render(); },
   // pv
   'new-pv': () => newPv(),
-  'pv-back': () => { if (UI.pvDirty && !confirm('Quitter sans enregistrer ?')) return; UI.pv = null; UI.pvDirty = false; render(); },
-  'pv-present': el => { const p = UI.pv, n = el.dataset.n; p.present = p.present.includes(n) ? p.present.filter(x => x !== n) : [...p.present, n]; el.classList.toggle('on'); UI.pvDirty = true; },
-  'pv-save': () => savePv(),
+  'pv-back': () => { pvAutosave(true); UI.pv = null; UI.pvDirty = false; render(); },
+  'pv-present': el => { const p = UI.pv, n = el.dataset.n; p.present = p.present.includes(n) ? p.present.filter(x => x !== n) : [...p.present, n]; el.classList.toggle('on'); pvDirtyNow(); },
+  'pv-save': () => pvAutosave(true),
   'pv-wa': () => mWa(waText(UI.pv)),
   'pv-pdf': () => printPv(UI.pv),
   'pv-del': () => { const id = UI.pv.id; UI.pv = null; UI.pvDirty = false; remove('pvs', id, 'PV'); },
-  'pv-agenda': () => { const ta = $('[data-i="pv-body"]'); if (!ta) return; const evx = UI.pv.eventId ? ev(UI.pv.eventId) : null; const dsl = evx ? (evx.discuss || []).filter(x => !x.done) : []; const tpl = dsl.length ? "À DISCUTER (" + evx.name + ")\n" + dsl.map(x => '- ' + (x.th ? x.th + ' : ' : '') + x.t).join('\n') + "\n\nNOTES\n" : "ORDRE DU JOUR\n1. Prochain event\n2. Sponsors\n3. Communication\n4. Divers\n\nNOTES\n"; UI.pv.body = (UI.pv.body ? UI.pv.body + '\n\n' : '') + tpl; ta.value = UI.pv.body; ta.focus(); UI.pvDirty = true; pvTasksRefresh(); },
-  'pvt-add': () => { const text = $('[name="pvt-text"]').value.trim(); if (!text) return toast('Décris la tâche'); UI.pv.tasks.push({ src: 'manual', who: $('[name="pvt-who"]').value || null, text, due: $('[name="pvt-due"]').value || '' }); $('[name="pvt-text"]').value = ''; $('[name="pvt-due"]').value = ''; UI.pvDirty = true; pvTasksRefresh(); $('[name="pvt-text"]').focus(); },
-  'pvt-del': el => { const all = pvAllTasks(UI.pv); const x = all[+el.dataset.i]; UI.pv.tasks = UI.pv.tasks.filter(t => t !== x && !(t.src !== 'body' && t.text === x.text && t.who === x.who)); UI.pvDirty = true; pvTasksRefresh(); },
+  'pv-agenda': () => { const ta = $('[data-i="pv-body"]'); if (!ta) return; const evx = UI.pv.eventId ? ev(UI.pv.eventId) : null; const dsl = evx ? (evx.discuss || []).filter(x => !x.done) : []; const tpl = dsl.length ? "À DISCUTER (" + evx.name + ")\n" + dsl.map(x => '- ' + (x.th ? x.th + ' : ' : '') + x.t).join('\n') + "\n\nNOTES\n" : "ORDRE DU JOUR\n1. Prochain event\n2. Sponsors\n3. Communication\n4. Divers\n\nNOTES\n"; UI.pv.body = (UI.pv.body ? UI.pv.body + '\n\n' : '') + tpl; ta.value = UI.pv.body; ta.focus(); pvDirtyNow(); pvTasksRefresh(); },
+  'pvt-add': () => { const text = $('[name="pvt-text"]').value.trim(); if (!text) return toast('Décris la tâche'); UI.pv.tasks.push({ src: 'manual', who: $('[name="pvt-who"]').value || null, text, due: $('[name="pvt-due"]').value || '' }); $('[name="pvt-text"]').value = ''; $('[name="pvt-due"]').value = ''; pvDirtyNow(); pvTasksRefresh(); $('[name="pvt-text"]').focus(); },
+  'pvt-del': el => { const all = pvAllTasks(UI.pv); const x = all[+el.dataset.i]; UI.pv.tasks = UI.pv.tasks.filter(t => t !== x && !(t.src !== 'body' && t.text === x.text && t.who === x.who)); pvDirtyNow(); pvTasksRefresh(); },
   'wa-copy': () => { navigator.clipboard.writeText(mState.wa).then(() => { toast('Copié, colle-le dans le groupe'); closeModal(); }).catch(() => toast('Copie impossible')); },
   // modal options
   'opt': el => {
@@ -2861,7 +2928,7 @@ const ACT = {
 
 const CHG = {
   'me': async el => { UI.me = el.value || null; LS.set('sj4:me', UI.me); render(); },
-  'pvt-who': el => { const p = UI.pv; p.ovr = p.ovr || {}; p.ovr[el.dataset.key] = { ...(p.ovr[el.dataset.key] || {}), who: el.value || null }; UI.pvDirty = true; pvTasksRefresh(); },
+  'pvt-who': el => { const p = UI.pv; p.ovr = p.ovr || {}; p.ovr[el.dataset.key] = { ...(p.ovr[el.dataset.key] || {}), who: el.value || null }; pvDirtyNow(); pvTasksRefresh(); },
   'c-status': el => { patch('content', el.dataset.id, { status: el.value }); el.style.color = statC(CSTAT, el.value); toast('Statut mis à jour'); },
   'ev-field': el => { const e = ev(el.dataset.id); if (!e) return; const f = el.dataset.f; if (f.startsWith('debrief.')) { const k = f.split('.')[1]; patch('events', e.id, { debrief: { ...(e.debrief || {}), [k]: el.value } }); } else patch('events', e.id, { [f]: el.value }); toast('Enregistré'); },
   'sim-date': el => {
@@ -2869,7 +2936,7 @@ const CHG = {
     UI.sim.date = el.value; if (el.value) UI.tlYear = +el.value.slice(0, 4); render();
     const n = $('[data-c="sim-date"]'); if (n) n.focus();
   },
-  'pv-ev': el => { UI.pv.eventId = el.value || null; UI.pvDirty = true; },
+  'pv-ev': el => { UI.pv.eventId = el.value || null; pvDirtyNow(); },
   'color-custom': el => { mState.color = el.value; $$('.sw', $('#colors')).forEach(s => s.classList.remove('on')); },
   'set-member': el => { const i = +el.dataset.i, f = el.dataset.f, old = S().members[i].name; const v = f === 'name' ? el.value.trim() : el.value; if (!v) return; setSettings(s => s.members[i][f] = v);
     if (f === 'name' && old !== v) { ['tasks', 'content'].forEach(k => D[k].forEach(r => { if (r.who === old) { r.who = v; r.u = Date.now(); } })); touch('tasks'); touch('content'); if (UI.me === old) { UI.me = v; LS.set('sj4:me', v); } }
@@ -2880,9 +2947,9 @@ const CHG = {
   'win-custom': el => { const v = Math.max(7, Math.min(180, +el.value || 45)); mState.win = v; $$('[data-a="opt"][data-g="win"]', $('#modal-root')).forEach(b => b.classList.toggle('on', +b.dataset.v === v)); evSimRefresh(); dpRefresh(); }
 };
 const INP = {
-  'pv-title': el => { UI.pv.title = el.value; UI.pvDirty = true; },
-  'pv-date': el => { UI.pv.date = el.value; UI.pvDirty = true; },
-  'pv-body': el => { UI.pv.body = el.value; UI.pvDirty = true; clearTimeout(INP._t); INP._t = setTimeout(pvTasksRefresh, 250); },
+  'pv-title': el => { UI.pv.title = el.value; pvDirtyNow(); },
+  'pv-date': el => { UI.pv.date = el.value; pvDirtyNow(); },
+  'pv-body': el => { UI.pv.body = el.value; pvDirtyNow(); clearTimeout(INP._t); INP._t = setTimeout(pvTasksRefresh, 250); },
   'pv-q': el => { UI.pvQ = el.value; const pos = el.selectionStart; render(); const n = $('[data-i="pv-q"]'); n.focus(); n.setSelectionRange(pos, pos); },
   'sp-q': el => { mState.q = el.value; $('#sp-pick').innerHTML = pickHtml(); },
   'ev-name': () => { clearTimeout(INP._e); INP._e = setTimeout(evSuggRefresh, 200); },
@@ -2930,7 +2997,7 @@ document.addEventListener('keydown', e => {
     else if (el.dataset.k === 'cp-add') { e.preventDefault(); const v = el.value.trim(); if (!v) return; mState.cps.push({ id: uid('cp'), t: v, done: false }); el.value = ''; $('#cps').innerHTML = cpsHtml(); }
     else if (el.tagName === 'INPUT' && $('#modal-root').contains(el) && el.type !== 'number') { const sv = $('#modal-root [data-a^="save-"]'); if (sv) { e.preventDefault(); sv.click(); } }
   }
-  if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { const sv = $('#modal-root [data-a^="save-"]') || (UI.pv && $('[data-a="pv-save"]')); if (sv) { e.preventDefault(); sv.click(); } }
+  if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { const sv = $('#modal-root [data-a^="save-"]') || null; if (sv) { e.preventDefault(); sv.click(); } }
 });
 document.addEventListener('input', e => { if (e.target.id === 'pal-q') { palSel = 0; palRefresh(e.target.value); } });
 document.addEventListener('mousemove', e => { const pi = e.target.closest && e.target.closest('[data-pi]'); if (pi && +pi.dataset.pi !== palSel) { palSel = +pi.dataset.pi; $$('.pal-i').forEach(x => x.classList.toggle('on', +x.dataset.pi === palSel)); } });
@@ -3067,7 +3134,8 @@ async function boot() {
   render();
   setInterval(() => { if (document.visibilityState === 'visible') pullAll(); }, 20000);
   window.addEventListener('focus', () => pullAll());
-  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flush(); });
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') { pvAutosave(true); flush(); } });
+  window.addEventListener('pagehide', () => { pvAutosave(true); flush(); });
 }
 boot();
 })();
