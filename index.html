@@ -2793,7 +2793,7 @@ async function importJson(file) {
     if (j.version === 3 || (j.events && j.events[0] && j.events[0].event_family)) data = { ...convertV3(j), images: j.images };
     if (Array.isArray(j) && j[0] && j[0].date && j[0].label) data = { externals: j };
     let added = 0;
-    COLLS.forEach(k => { if (Array.isArray(data[k])) { const before = live(k).length; D[k] = mergeById(D[k], data[k].map(r => ({ ...r, id: r.id || uid('x'), u: Math.max(r.u || 0, 1) }))); added += live(k).length - before; touch(k); } });
+    COLLS.forEach(k => { if (Array.isArray(data[k])) { const before = live(k).length; const now = Date.now(); D[k] = mergeById(D[k], data[k].map(r => ({ ...r, id: r.id || uid('x'), u: now }))); added += live(k).length - before; touch(k); } });
     if (data.settings && j.version >= 4) { D.settings = fixSettings({ ...data.settings, u: Date.now() }); touch('settings'); }
     if (data.images) for (const [id, url] of Object.entries(data.images)) { try { await setImg(id, url); } catch (e) {} }
     toast(added ? `Import terminé, ${plural(added, 'élément ajouté', 'éléments ajoutés')}` : 'Import terminé'); render();
