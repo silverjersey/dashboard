@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#F2EEE6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="SJ Dashboard">
+<meta name="theme-color" content="#F3EFE8">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FscXVlXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE4NjguNzIgMTg3NC4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMS0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzYxLjc3LDY5MC43NmMxMTMuOTEtMTIzLjk5LDEzNC4zNS0zMzAuMzUsNTguMzQtNDc0LjAyQzE3NDMuOTMsNzIuNzcsMTU4MC4zNi0xNS4wNywxNDEyLjcxLDMuMDljLTEyMS42LDEzLjE3LTIyNS43Nyw2My4zOC0yOTYuMDUsMTY3LjUxLTMyLjgzLDQ4LjY0LTIwLjcsMTA0LjE1LDIzLjExLDEzNy45Nyw0Mi40NSwzMi43OCw4NS41NywyNy45NiwxMjkuOTctMTQuNzcsNy44Ny03LjU3LDE0Ljk2LTE1Ljk0LDIyLjUxLTIzLjg1LDY0LjkzLTY4LjAyLDE1OS45Mi04Ni4yLDI0NS4yNy00Ni45NiwxMjcuMDEsNTguMzksMTY2LjcsMjE0Ljc4LDg0LjU3LDMzOC4zMS0xMTguNDYsMTc4LjE4LTIzOC4xNywzNTUuNTQtMzU2LjkyLDUzMy41NC00MS4zMiw2MS45NC04MS4zNSwxMjQuNzMtMTIxLjk2LDE4Ny4xM002OTcuNzcsMTEzLjQzQzYxMi4yMiwyOS4yOCw1MDMuODUtNy4wMSwzODQuOCwxLjExLDExMy4yNywxOS42NS01NS44MSwyNjguNTksMTYuOTEsNTM4LjE0YzIzLjA5LDg1LjU4LDY1LjEzLDE1OC45OSwxNDEuNjcsMjA3LjU4LDQ2Ljc1LDI5LjY4LDEwMS4yMSwxOC42NiwxMzQuNzgtMjMuMjQsMjguOTItMzYuMDksMjUuNzktODkuOTUtOC0xMjguNzgtOS4yMS0xMC41OC0yMC4wOS0xOS42OS0yOS41Ny0zMC4wNS03My42OC04MC41My04MC45NC0xODAuNzktMTkuNzQtMjcwLDU4Ljg4LTg1Ljg0LDE2Mi4zMi0xMTYuNTIsMjYxLTc1LjM5LDI4LjY1LDExLjk0LDU2LjEsMjcuNjksODIuMjMsNDQuNTgsMTcwLjU2LDExMC4yNSwzNDAuNzcsMjIxLjA0LDUxMC43NCwzMzIuMTgsNzEuMzYsNDYuNjYsMTQxLjg3LDk0LjYzLDIxMi43NiwxNDJNMTA0NS43LDE2NDEuODRjNDIuNSw0My41Myw4Mi4wMyw5MS4yNywxMjkuOTIsMTI3Ljk4LDE0Mi43OCwxMDkuNDYsMzAwLjksMTM3Ljk4LDQ2NS43OCw1Ny4yNywxNTguNDktNzcuNTgsMjMzLjM2LTIxMS44NywyMjYuOTQtMzg3LjUtNC4zNi0xMTkuMi01Ni42NS0yMTkuMzMtMTQyLjQ0LTMwMC45Ny00Mi45Mi00MC44NC0xMDEuNzMtMzYuOTctMTQyLjc4LDQuMjctNDEuNTksNDEuNzgtNDIuMjYsODMuMjctMi4yOSwxMzIuNTUsMTkuNjEsMjQuMTksNDEuNjgsNDYuODksNTguMDIsNzMuMTMsNDUuMjYsNzIuNyw0NC4zOCwxNDguMzQsMy4zMywyMjIuMTUtMzkuOTQsNzEuODItMTA4LjE4LDEwMC43My0xODUuMzMsOTUuODUtNDYuMjItMi45My05NS4zMy0xOS40My0xMzUuNzYtNDIuNjUtMTAxLjQ3LTU4LjI5LTE5OS4wMi0xMjMuNDQtMjk3LjYzLTE4Ni42NC0xNDUuNzUtOTMuNDMtMjkxLjA1LTE4Ny41NS00MzYuNTQtMjgxLjM4TTEzNy40NSwxMTQ4Ljk4Yy03Ny41Niw3Ni4xMi0xMTkuMzgsMTY1LjU2LTEzMi43OSwyNzEuMjQtMjMuMzgsMTg0LjIxLDY4Ljk5LDM0NC43OCwyNDMuNDMsNDIxLjYsMTU5Ljg2LDcwLjQsMzY5Ljc2LDIyLjU0LDQ3OS40OC0xMDkuMzQsMzQuODUtNDEuODksMzYuMjgtOTYuNjEsMy40Ni0xMzIuMTYtMzMuNTMtMzYuMzEtODcuNzEtNDAuOTItMTMyLjIyLTkuOC0xOS4xNCwxMy4zOS0zNS44NCwzMC4yMS01NC42MSw0NC4xOS03NS43OCw1Ni40OS0xOTMuOTgsNTIuOTUtMjcxLjU5LTcuNTgtNzcuNDktNjAuNDQtMTAzLjM0LTE1OS45NS02Mi4wNi0yNTEuODIsMTUuODctMzUuMzIsMzcuMzEtNjguNDYsNTguNzktMTAwLjksMTMyLjcyLTIwMC40LDI2Ni4zLTQwMC4yMywzOTkuMjMtNjAwLjUsMTkuNDktMjkuMzYsMzYuOTctNjAuMDQsNTUuMzgtOTAuMTEiLz48cGF0aCBkPSJNMTE0My4yLDEyODEuOTZjNDAuNjItNjIuNCw4MC42NS0xMjUuMTksMTIxLjk2LTE4Ny4xMywxMTguNzQtMTc4LDIzOC40NS0zNTUuMzUsMzU2LjkyLTUzMy41NCw4Mi4xMy0xMjMuNTMsNDIuNDQtMjc5LjkyLTg0LjU3LTMzOC4zMS04NS4zNS0zOS4yNC0xODAuMzQtMjEuMDYtMjQ1LjI3LDQ2Ljk2LTcuNTUsNy45MS0xNC42NCwxNi4yOC0yMi41MSwyMy44NS00NC4zOSw0Mi43NC04Ny41MSw0Ny41NS0xMjkuOTcsMTQuNzctNDMuODEtMzMuODItNTUuOTMtODkuMzMtMjMuMTEtMTM3Ljk3LDcwLjI3LTEwNC4xMywxNzQuNDQtMTU0LjM0LDI5Ni4wNS0xNjcuNTEsMTY3LjY2LTE4LjE2LDMzMS4yMiw2OS42OCw0MDcuNCwyMTMuNjUsNzYuMDIsMTQzLjY3LDU1LjU3LDM1MC4wMy01OC4zNCw0NzQuMDItMTE3LjI0LDEyNy42MS0yNDMuMDksMjQ3LjM2LTM2NS42MywzNzAuMSIvPjxwYXRoIGQ9Ik0xMzAyLjc4LDczNy4wMmMtNzAuODktNDcuMzctMTQxLjQtOTUuMzQtMjEyLjc2LTE0Mi0xNjkuOTctMTExLjE1LTM0MC4xOC0yMjEuOTQtNTEwLjc0LTMzMi4xOC0yNi4xMy0xNi44OS01My41OC0zMi42NC04Mi4yMy00NC41OC05OC42OC00MS4xMy0yMDIuMTItMTAuNDQtMjYxLDc1LjM5LTYxLjE5LDg5LjIxLTUzLjkzLDE4OS40NywxOS43NCwyNzAsOS40OCwxMC4zNiwyMC4zNywxOS40NywyOS41NywzMC4wNSwzMy43OSwzOC44MywzNi45Miw5Mi43LDgsMTI4Ljc4LTMzLjU3LDQxLjktODguMDMsNTIuOTItMTM0Ljc4LDIzLjI0LTc2LjU0LTQ4LjU5LTExOC41OC0xMjEuOTktMTQxLjY3LTIwNy41OEMtNTUuODEsMjY4LjU5LDExMy4yNywxOS42NSwzODQuOCwxLjExYzExOS4wNS04LjEzLDIyNy40MiwyOC4xNywzMTIuOTcsMTEyLjMxLDE0OC4wOCwxNDUuNjUsMjkyLjMsMjk1LjIyLDQzNy45OCw0NDMuMzEiLz48cGF0aCBkPSJNNTg2LjkyLDExNTUuODljMTQ1LjQ5LDkzLjgzLDI5MC43OSwxODcuOTYsNDM2LjU0LDI4MS4zOCw5OC42LDYzLjIsMTk2LjE2LDEyOC4zNSwyOTcuNjMsMTg2LjY0LDQwLjQyLDIzLjIyLDg5LjU0LDM5LjczLDEzNS43Niw0Mi42NSw3Ny4xNCw0Ljg4LDE0NS4zOC0yNC4wMywxODUuMzMtOTUuODUsNDEuMDUtNzMuODEsNDEuOTMtMTQ5LjQ1LTMuMzMtMjIyLjE1LTE2LjM0LTI2LjI0LTM4LjQtNDguOTQtNTguMDItNzMuMTMtMzkuOTctNDkuMjgtMzkuMy05MC43NywyLjI5LTEzMi41NSw0MS4wNS00MS4yNCw5OS44Ny00NS4xMSwxNDIuNzgtNC4yNyw4NS43OCw4MS42NCwxMzguMDgsMTgxLjc3LDE0Mi40NCwzMDAuOTcsNi40MiwxNzUuNjMtNjguNDUsMzA5LjkyLTIyNi45NCwzODcuNS0xNjQuODgsODAuNzEtMzIzLDUyLjE5LTQ2NS43OC01Ny4yNy00Ny44OS0zNi43MS04Ny40Mi04NC40NS0xMjkuOTItMTI3Ljk4Ii8+PHBhdGggZD0iTTcyMy45NCw1ODMuOGMtMTguNDEsMzAuMDctMzUuODksNjAuNzUtNTUuMzgsOTAuMTEtMTMyLjkyLDIwMC4yNy0yNjYuNTEsNDAwLjEtMzk5LjIzLDYwMC41LTIxLjQ4LDMyLjQzLTQyLjkyLDY1LjU4LTU4Ljc5LDEwMC45LTQxLjI3LDkxLjg3LTE1LjQzLDE5MS4zOCw2Mi4wNiwyNTEuODIsNzcuNiw2MC41MywxOTUuOCw2NC4wNywyNzEuNTksNy41OCwxOC43Ni0xMy45OSwzNS40Ni0zMC44MSw1NC42MS00NC4xOSw0NC41MS0zMS4xMiw5OC42OS0yNi41MSwxMzIuMjIsOS44LDMyLjgyLDM1LjU1LDMxLjM5LDkwLjI3LTMuNDYsMTMyLjE2LTEwOS43MiwxMzEuODgtMzE5LjYyLDE3OS43NC00NzkuNDgsMTA5LjM0QzczLjY0LDE3NjUtMTguNzMsMTYwNC40Myw0LjY2LDE0MjAuMjNjMTMuNDItMTA1LjY4LDU1LjIzLTE5NS4xMywxMzIuNzktMjcxLjI0Ii8+PC9nPjwvc3ZnPg==">
 <title>Silver Jersey Dashboard</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-one@5/300.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-one@5/400.css">
@@ -35,7 +42,8 @@ input[type=date],input[type=time]{min-height:20px}
 #side{width:var(--side);flex-shrink:0;position:sticky;top:0;height:100vh;padding:22px 14px 16px;display:flex;flex-direction:column;gap:4px;overflow-y:auto;scrollbar-width:none}
 #side::-webkit-scrollbar{display:none}
 .brand{display:flex;align-items:center;gap:11px;padding:2px 10px 18px}
-.logo{width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;letter-spacing:-.03em;box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}
+.logo{width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.5)}
+.logo img{width:20px;height:20px;display:block}
 .brand b{display:block;font-size:14px;font-weight:600;letter-spacing:.02em;text-transform:uppercase}
 .brand small{display:block;font-size:11.5px;color:var(--ink3);margin-top:1px}
 .search-btn{display:flex;align-items:center;gap:10px;padding:9px 12px;margin:0 2px 12px;border-radius:14px;background:rgba(255,255,255,.65);color:var(--ink3);font-size:13px;box-shadow:inset 0 0 0 1px var(--line)}
@@ -70,7 +78,7 @@ kbd{font:500 10.5px/1 inherit;padding:4px 6px;border-radius:6px;background:var(-
   #side{position:fixed;inset:0 auto 0 0;z-index:90;background:var(--bg);transform:translateX(-102%);transition:transform .25s ease;box-shadow:var(--sh2)}
   #side.open{transform:none}
   #drawer-bg.show{display:block;position:fixed;inset:0;background:rgba(20,20,20,.25);z-index:89;backdrop-filter:blur(2px)}
-  #main{padding:20px 16px 120px}
+  #main{padding:20px 16px calc(120px + env(safe-area-inset-bottom))}
   #tabbar{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:80;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:22px;box-shadow:var(--sh2);padding:6px;justify-content:space-around}
   .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0;border-radius:16px;font-size:10.5px;color:var(--ink3)}
   .tab.on{color:var(--ink)}
@@ -358,6 +366,10 @@ kbd{font:500 10.5px/1 inherit;padding:4px 6px;border-radius:6px;background:var(-
 .cl-row:hover{background:var(--soft)}
 .cl-row .x{opacity:0;margin-left:auto}
 .cl-row:hover .x{opacity:1}
+@media (hover:none){.cl-row .x{opacity:.45}.pinb{opacity:.5}}
+@media (pointer:coarse){input,select,textarea,.fi{font-size:16px!important}.pv-ed .pv-body,.pv-hl{font-size:16px!important}}
+html{-webkit-text-size-adjust:100%}
+@media (max-width:640px){.bt{display:none}.h-actions .btn-sm{padding-left:11px;padding-right:11px}}
 .cl-row.done span{color:var(--ink3);text-decoration:line-through}
 .area{width:100%;min-height:90px;padding:12px 14px;border-radius:14px;background:var(--soft);font-size:13px;line-height:1.55;resize:vertical}
 .area:focus{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line2)}
@@ -398,6 +410,23 @@ kbd{font:500 10.5px/1 inherit;padding:4px 6px;border-radius:6px;background:var(-
 
 /* ---------- PV ---------- */
 .pvlist{display:flex;flex-direction:column;gap:8px}
+.setcol{display:flex;flex-direction:column;gap:12px;max-width:780px}
+.card.acc > .c-head{cursor:pointer;margin-bottom:14px;user-select:none}
+.card.acc > .c-head::after{content:'';width:8px;height:8px;border-right:1.6px solid var(--ink3);border-bottom:1.6px solid var(--ink3);transform:rotate(45deg) translateY(-3px);margin-left:12px;transition:transform .2s;flex-shrink:0}
+.card.acc.closed > .c-head{margin-bottom:0}
+.card.acc.closed > .c-head::after{transform:rotate(-45deg)}
+.card.acc.closed > :not(.c-head){display:none}
+.card.acc.closed > .c-head > :not(.c-title):not(.stat){display:none}
+.login{position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(900px 500px at 80% -10%,rgba(34,31,255,.10),transparent),radial-gradient(700px 500px at 0% 110%,rgba(223,222,217,.9),transparent),var(--bg)}
+.lg-card{width:100%;max-width:420px;background:#fff;border-radius:30px;box-shadow:var(--sh);padding:34px 30px 26px;text-align:center}
+.lg-logo{width:64px;height:64px;border-radius:50%;background:var(--ink);display:inline-flex;align-items:center;justify-content:center;margin-bottom:14px}.lg-logo img{width:30px;height:30px}
+.lg-t{font-size:22px;font-weight:600;letter-spacing:-.01em}.lg-s{font-size:13px;color:var(--ink3);margin:2px 0 22px}
+.lg-who{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.lg-m{display:flex;flex-direction:column;align-items:center;gap:7px;padding:12px 4px;border-radius:18px;font-size:12.5px;font-weight:500;cursor:pointer;opacity:.55;transition:all .15s}
+.lg-m:hover{opacity:.85;background:var(--soft)}.lg-m.on{opacity:1;background:var(--soft);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.lg-in{width:100%;margin-bottom:10px;text-align:center}
+.lg-go{width:100%;justify-content:center;margin-top:4px}
+.lg-err{font-size:12.5px;color:var(--bad);min-height:18px;margin-top:10px}
 .pinb{opacity:.35}
 .cl-row:hover .pinb,.pvt:hover .pinb{opacity:.8}
 .pinb.on{opacity:1;color:var(--ink);background:var(--soft2)}
@@ -755,65 +784,16 @@ const DEF_SETTINGS = {
   u: 0
 };
 const EXT_V = 3;
-const APP_V = 16;
+const APP_V = 18;
 const PV_V = 1;
 function showOld() { if ($('#oldv')) return; const d = document.createElement('div'); d.id = 'oldv'; d.className = 'oldv'; d.innerHTML = 'Une version plus récente du dashboard a été ouverte. Ferme cet onglet ou recharge la page pour ne rien écraser.'; document.body.appendChild(d); }
 const SP_V = 5;
 const WINS = [30, 45, 60, 90];
-const SP_LIST = [
-  ['sp_vw', 'Vitamin Well', { ref: 'Axel', status: 'confirmed', kind: 'rec', cat: 'produit', contribution: 'Boissons' }],
-  ['sp_bb', 'Barebells', { ref: 'Axel', status: 'confirmed', kind: 'rec', cat: 'produit', contribution: 'Barres protéinées' }],
-  ['sp_dg', "Dr. Gab's", { ref: 'Henri', status: 'confirmed', kind: 'rec', cat: 'produit', contribution: 'Bières' }],
-  ['sp_iris', 'Iris', { ref: 'Maxime', status: 'todo', kind: 'one', cat: 'produit', site: 'iris.swiss', contribution: 'Compotes', task: 1 }],
-  ['sp_revivr', 'Revivr', { ref: 'Axel', status: 'later', kind: 'one', cat: 'produit', site: 'drinkrevivr.com', notes: 'Solution de secours.' }],
-  ['sp_peak', 'PEAQ', { ref: 'Henri', status: 'later', kind: 'one', cat: 'produit', site: 'peaqhydration.com', notes: 'Solution de secours.' }],
-  ['sp_cps', 'Compressport', { ref: 'Henri', status: 'todo', kind: 'one', cat: 'matériel', site: 'compressport.com', task: 1 }],
-  ['sp_br', 'Blackroll', { ref: 'Axel', status: 'todo', kind: 'one', cat: 'matériel', site: 'blackroll.com', task: 1 }],
-  ['sp_bcf', 'BCF', { ref: 'Jocelyn', status: 'talks', kind: 'one', cat: 'financier', notes: 'Partants pour un event précis, pas pour un partenariat global.', clearContact: 1 }],
-  ['sp_ge', 'Groupe E', { ref: 'Jocelyn', status: 'talks', kind: 'one', cat: 'financier', site: 'groupe-e.ch', notes: 'Partants pour un event précis, pas pour un partenariat global.' }],
-  ['sp_mob', 'La Mobilière', { ref: 'Jocelyn', status: 'todo', kind: 'one', cat: 'financier', site: 'mobiliere.ch', task: 1 }],
-  ['sp_stud', 'Le Stud', { ref: 'Henri', status: 'later', kind: 'one', cat: 'lieu', site: 'le-stud.ch', contribution: 'Concept store, lieu disponible', notes: 'À garder en tête pour un futur event.' }],
-  ['sp_popu', 'Le Popu', { ref: 'Henri', status: 'confirmed', kind: 'rec', cat: 'lieu', site: 'cafepopulaire.ch', contribution: 'Départ THE WEB' }],
-  ['sp_ef', 'Eleventh Floor', { ref: 'Henri' }],
-  ['sp_3ch', 'Troisième chambre', { ref: 'Henri', status: 'later', kind: 'one', cat: 'lieu', site: 'troisiemechambre.ch', notes: 'À garder en tête.' }],
-  ['sp_arsenalt', "Arsenal't", { ref: 'Henri', status: 'confirmed', kind: 'one', cat: 'lieu', site: 'quartierdalt.ch', contribution: 'Lieu disponible', notes: 'Utilisé pour THE SILVER SURFER EP.3.' }],
-  ['sp_an', 'Andros', { ref: 'Maxime' }],
-  ['sp_sigg', 'SIGG', { ref: 'Henri', status: 'todo', kind: 'one', cat: 'matériel', site: 'sigg.com', contribution: 'Gourdes', task: 1 }],
-  ['sp_gm', 'Grano Maté', { ref: 'Henri', status: 'confirmed', kind: 'rec', cat: 'produit', contribution: 'Gratuité sur les events, un bib de 5 à 10 litres offert pour les matés', notes: 'Collaboration.' }],
-  ['sp_mbp', 'My Bike Plan', { ref: 'Henri', status: 'confirmed', kind: 'rec', cat: 'collaboration', contribution: 'Visibilité, collaboration' }],
-  ['sp_scott', 'Scott', { ref: 'Axel', status: 'todo', kind: 'one', cat: 'matériel', site: 'scott-sports.com' }],
-  ['sp_persk', 'Perskindol', { ref: 'Axel', status: 'todo', kind: 'one', cat: 'produit', site: 'perskindol.ch', notes: 'Groupe Vifor.' }],
-  ['sp_och', 'Ochsner Sport', { ref: 'Henri', status: 'todo', kind: 'one', cat: 'matériel', site: 'ochsnersport.ch', contribution: 'Matériel', notes: 'Avec Axel.' }],
-  ['sp_dc', 'Decathlon', { ref: 'Henri', cat: 'matériel' }],
-  ['sp_rb', 'Red Bull', { ref: 'Axel', status: 'todo', kind: 'one', cat: 'produit', site: 'redbull.com', task: 1 }],
-  ['sp_melt', 'Meltonic', { ref: 'Henri', status: 'todo', kind: 'one', cat: 'produit', site: 'meltonic.com', task: 1 }],
-  ['sp_spon', 'Sponser', { ref: 'Henri', status: 'todo', kind: 'one', cat: 'produit', site: 'sponser.ch', task: 1 }],
-  ['sp_es', 'Esaho', { ref: 'Jocelyn', status: 'confirmed', kind: 'rec', cat: 'service', contribution: 'Support technique et développement' }],
-  ['sp_ess', "L'essentiel", { ref: 'Jocelyn', status: 'todo', kind: 'one', cat: 'collaboration', site: 'lessentiel-evenement.ch', contribution: 'Présentation', notes: 'Idée : organiser une conférence.' }],
-  ['sp_morave', 'Movare', { ref: 'Axel', status: 'todo', kind: 'one', cat: 'service', site: 'movare.ch', contribution: 'Physio, stand de massage sur un event', task: 1 }],
-  ['sp_nesp', 'Nespresso', { ref: 'Maxime', status: 'todo', kind: 'one', cat: 'produit', site: 'nespresso.com', contribution: 'Machines ou capsules sur un event', task: 1 }],
-  ['sp_ovo', 'Ovomaltine', { ref: 'Henri', status: 'todo', kind: 'one', cat: 'produit', site: 'ovomaltine.ch', task: 1 }],
-  ['sp_mf', 'Morat-Fribourg', { ref: 'Axel', status: 'talks', kind: 'one', cat: 'collaboration', site: 'morat-fribourg.ch', notes: 'Travailler ensemble en 2027.' }],
-  ['sp_tissot', 'Tissot', { ref: 'Maxime', status: 'todo', kind: 'one', cat: 'matériel', site: 'tissotwatch.com', task: 1 }],
-  ['sp_saane', 'Saane', { ref: 'Henri', status: 'todo', kind: 'one', cat: 'produit', site: 'saneactive.com', notes: 'Club de run qui fait aussi des habits. Potentiellement pour le futur merch.', task: 1 }]
-];
+const SP_LIST = [];
 
 
 const BASE_V = 1;
-const SS_BASE = {
-  cl: ['Snacks salés digestes (pizza, encas)', 'Ravitaillement sucré (fruits, chocolat), sans fruits secs ni saucisson', 'Poubelles de tri sélectif', 'Posters des éditions précédentes (coin archives)', 'Coin salon et massage', 'Trousse de secours', 'Pompe', 'Chambres à air'],
-  tk: [
-    { d: -90, who: null, t: 'Réserver la piscine de la Motta et valider les accès avec le Service des sports' },
-    { d: -60, who: null, t: 'Ajouter au formulaire d’inscription la vitesse vélo et le pseudo Instagram' },
-    { d: -21, who: null, t: 'Créer les nouveaux groupes WhatsApp' },
-    { d: -14, who: null, t: 'Préparer les traces GPX avec les arrêts photos et les envoyer' },
-    { d: -14, who: null, t: 'Publier le programme de la journée ailleurs que sur Instagram' },
-    { d: -7, who: null, t: 'Faire les groupes de niveau vélo' },
-    { d: -7, who: null, t: 'Planning avec 2 heures de marge et pauses courtes entre les boucles' },
-    { d: -7, who: null, t: 'Inviter un·e intervenant·e pour les pauses (physio, nutrition)' },
-    { d: -1, who: null, t: 'Partager la localisation entre staff et bénévoles' }
-  ]
-};
+const SS_BASE = { cl: [], tk: [] };
 function tBase(type) { const b = (S().typeBase || {})[type]; return { cl: (b && b.cl) || [], tk: (b && b.tk) || [] }; }
 function setBase(type, fn) { setSettings(s => { s.typeBase = s.typeBase || {}; const b = s.typeBase[type] || { cl: [], tk: [] }; b.cl = b.cl || []; b.tk = b.tk || []; fn(b); s.typeBase[type] = b; }); }
 function inBase(type, txt) { const b = tBase(type), n = norm(txt); return b.cl.some(x => norm(x) === n) || b.tk.some(x => norm(x.t) === n); }
@@ -837,79 +817,20 @@ function mBase(type) {
     ${b.tk.map((x, i) => `<div class="cl-row"><span class="tag" style="min-width:46px;justify-content:center">${x.d === 0 ? 'J' : x.d > 0 ? 'J+' + x.d : 'J' + x.d}</span><span style="flex:1">${esc(x.t)}</span>${x.who ? av(x.who, 's') : '<span class="muted" style="font-size:11px">à attribuer</span>'}<button class="ibtn sm" data-a="base-del" data-k="tk" data-i="${i}">${ic('x', 12)}</button></div>`).join('') || '<div class="c-sub" style="margin:4px 0 8px">Aucune</div>'}
     <div class="fl" style="margin-top:14px">Matériel</div>
     ${b.cl.map((x, i) => `<div class="cl-row"><span style="flex:1">${esc(x)}</span><button class="ibtn sm" data-a="base-del" data-k="cl" data-i="${i}">${ic('x', 12)}</button></div>`).join('') || '<div class="c-sub" style="margin:4px 0 8px">Aucun</div>'}
-    <div class="qa inline" style="margin-top:12px">${ic('plus', 16)}<input data-k="base-add" placeholder="Ajouter du matériel, ou une tâche : J-14 Réserver le photographe @Axel"></div>
+    <div class="qa inline" style="margin-top:12px">${ic('plus', 16)}<input data-k="base-add" placeholder="Matériel, ou J-14 tâche @Prénom"></div>
   </div><div class="m-f"><div></div><div><button class="btn btn-dark" data-a="close">OK</button></div></div>`);
 }
 
-const SS4_DISCUSS = [
-  ['Hub et lieu', 'Créer un coin archives avec les posters des éditions précédentes'],
-  ['Hub et lieu', 'Installer des poubelles de tri sélectif claires au hub'],
-  ['Hub et lieu', 'Réserver et valider en amont les accès avec la piscine de la Motta et le Service des sports'],
-  ['Timing', 'Ajouter 2 heures de marge sur l’horaire global (retards, voir le doc de Maxime)'],
-  ['Timing', 'Pauses courtes entre les boucles, grandes pauses seulement entre les disciplines'],
-  ['Timing', 'Annoncer le départ de la boucle suivante dès l’arrivée de la précédente'],
-  ['Vélo et sécurité', 'Demander la vitesse moyenne des cyclistes à l’inscription'],
-  ['Vélo et sécurité', 'Faire au moins 2 groupes de niveau, surtout sur les 2 plus grandes boucles'],
-  ['Vélo et sécurité', 'Préparer les traces GPX (Google Maps) avec les arrêts photos et les envoyer aux participant·e·s'],
-  ['Vélo et sécurité', 'Toujours un·e organisateur·rice à l’avant et à l’arrière des groupes'],
-  ['Vélo et sécurité', 'Partager la localisation en direct (Localiser) entre staff et bénévoles dès le départ'],
-  ['Ravitaillement', 'Retirer les aliments lourds pendant l’effort (fruits secs, saucisson)'],
-  ['Ravitaillement', 'Ajouter du salé facile à digérer (pizza, encas adaptés à l’effort)'],
-  ['Ravitaillement', 'Adapter le ravitaillement aux pauses courtes'],
-  ['Animations', 'Inviter des intervenant·e·s pendant les pauses (physio, nutritionniste du sport)'],
-  ['Communication', 'Plus de vidéos face caméra (Axel), surtout pour la promo'],
-  ['Communication', 'Rendre le programme de la journée accessible ailleurs que sur Instagram'],
-  ['Communication', 'Récupérer les pseudos Instagram des participant·e·s pour les taguer'],
-  ['Communication', 'WhatsApp : créer de nouveaux groupes plutôt que retirer des membres']
-];
-const SS4_GEAR = ['Poubelles de tri sélectif', 'Posters des éditions précédentes (coin archives)', 'Canapés et coin salon', 'Coin massage', 'Trousse de secours', 'Pompe', 'Chambres à air'];
-const SS3_GOOD = "Hub central et lieu : espace, ambiance salon, coin massage\nConcept et ambiance globale\nPrix d'inscription\nStories pendant l'event et vidéos face caméra\nRavitaillement ouvert et généreux";
-const SS3_IMPROVE = "Pauses courtes entre les boucles, grandes pauses entre les disciplines\nVélo : vitesse demandée à l'inscription, au moins 2 groupes de niveau\nMarge de 2 heures sur l'horaire global\nRavitaillement plus digeste, plus de salé\nProgramme accessible en amont, pseudos Insta pour taguer\nPoubelles de tri et coin archives\nTraces GPX prêtes et localisation du staff en direct\nNouveaux groupes WhatsApp plutôt que retirer des membres";
+const SS4_DISCUSS = [];
+const SS4_GEAR = [];
+const SS3_GOOD = '';
+const SS3_IMPROVE = '';
 
 const SCOTT_V = 1;
-function applyScott() {
-  if ((D.settings.scottV || 0) >= SCOTT_V) return false;
-  const now = Date.now();
-  let e = live('events').find(x => /web/.test(norm(x.name)) && /scott/.test(norm(x.name)));
-  const notes = "Retours de Winona (Scott) après la réunion, Leila Aebli en copie, réponses en français possibles.\nConcept : chasse au trésor façon THE WEB, Scott HQ comme hub central. Les participant·e·s font des checkpoints et repassent au Hub entre deux.\nFormat : soirée en semaine, event gratuit, 10 à 15 km, tracé par Silver Jersey, possibilité de sauter un checkpoint.\nTiming proposé : vers 20h15 départ vers le dernier checkpoint, fermeture des checkpoints dès 21h, retour au Hub.\nInscriptions sur notre plateforme Infomaniak avec 2 cases : newsletter Scott et politique de confidentialité Scott.\nScott produit les visuels en gardant la personnalité Silver Jersey et bloque ses photographes.";
-  if (!e) { e = { id: 'evt_webscott27', name: 'THE WEB x SCOTT', type: 'web', color: '#FF1F9F', win: 45, date: '2027-02-04', time: 'Soirée', location: 'Scott HQ', notes, checklist: [], debrief: {}, u: now }; D.events.push(e); }
-  else { if (!e.notes) e.notes = notes; else if (!e.notes.includes('Winona')) e.notes += '\n\n' + notes; if (!e.location) e.location = 'Scott HQ'; e.u = now; }
-  const DS = [
-    ['Hub', 'Découverte produit et scan des pieds (machine au HQ), lié à des points ou défis'],
-    ['Hub', 'Photobooth : Winona checke les prix'],
-    ['Hub', 'Boissons chaudes : Silver Jersey et Winona'],
-    ['Hub', 'Food : crêpes (Winona) et Eleventh Floor'],
-    ['Hub', 'Musique ou DJ via nos contacts'],
-    ['Hub', 'Sérigraphie sur place (t-shirt, bandeau)'],
-    ['Partenaires', 'Notre partenaire nutrition est le bienvenu'],
-    ['Partenaires', 'Scott pense contacter Vitamin Well, ouvert à d’autres idées'],
-    ['Partenaires', 'Frontales : Scott contacte des marques, sinon frontale obligatoire à l’inscription'],
-    ['Partenaires', 'Sacs ou t-shirts : création commune avec les visuels de l’event'],
-    ['Communication', 'Formats à donner à Scott : bannières inscription, stories, etc.'],
-    ['Communication', 'Notre photographe sur place, Scott bloque aussi les siens'],
-    ['Communication', 'Ambassadeurs : on contacte Colin, Scott contacte Seb, Leila aide pour d’autres ambassadeurs locaux'],
-    ['Côté Scott', 'Confirmer le setup inscriptions Infomaniak'],
-    ['Côté Scott', 'Vérifier ce qui est faisable légalement, l’event doit rester non compétitif'],
-    ['Côté Scott', 'Checkpoints et indices ou défis liés à Scott, à construire ensemble'],
-    ['Côté Scott', 'Créa et visuels de com, partagés une fois la direction validée'],
-    ['Côté Scott', 'Couverture photo et contenu'],
-    ['Côté Scott', 'Photobooth, food et boissons'],
-    ['Côté Scott', 'Contacter des marques de frontales'],
-    ['Côté Scott', 'Développer le Hub et les activations produit']
-  ];
-  const have = new Set((e.discuss || []).map(x => norm(x.t)));
-  e.discuss = [...(e.discuss || []), ...DS.filter(([, t]) => !have.has(norm(t))).map(([th, t], i) => ({ id: 'dsS_' + i, th, t, done: false }))];
-  const TK = ['Envoyer le cost deck mis à jour avec les différentes options', 'Confirmer la date et l’heure de départ', 'Confirmer la timeline plateforme d’inscription et com', 'Envoyer branding, références et moodboards à Scott', 'Confirmer les assets et formats dont on a besoin', 'Checker options et prix avec Eleventh Floor', 'Checker un DJ', 'Envoyer CG et décharge au juridique de Scott', 'Confirmer les partenaires additionnels', 'Explorer la sérigraphie sur place', 'Contacter Colin (ambassadeur)'];
-  TK.forEach((t, i) => { const id = 'tk_scott_' + i; if (!D.tasks.some(x => x.id === id) && !live('tasks').some(x => x.eventId === e.id && norm(x.title) === norm(t))) D.tasks.push({ id, title: t, who: null, also: [], due: '', status: 'todo', eventId: e.id, notes: 'Issu du mail de Winona (Scott)', u: now }); });
-  const sp = live('sponsors').find(x => norm(x.name) === 'scott');
-  if (sp) { sp.status = 'confirmed'; sp.cat = 'collaboration'; if (!sp.contribution) sp.contribution = 'Co-organisation THE WEB x SCOTT, Scott HQ comme hub, visuels de com'; if (!sp.contact) sp.contact = 'Winona (Leila Aebli en copie)'; sp.events = [...new Set([...(sp.events || []), e.id])]; sp.u = now; }
-  e.u = now; D.settings.scottV = SCOTT_V; D.settings.u = now;
-  touch('events'); touch('tasks'); touch('sponsors'); touch('settings');
-  return true;
-}
+function applyScott() { return false; }
 
 function applySS4() {
-  if (D.settings.ss4Done) return false;
+  if (D.settings.ss4Done || !SS4_DISCUSS.length) return false;
   const e4 = live('events').find(e => /silver surfer/.test(norm(e.name)) && /ep\.?\s*4\b/.test(norm(e.name)));
   if (!e4) return false;
   const now = Date.now();
@@ -969,54 +890,7 @@ function applySpList() {
    SEED
    ========================================================= */
 const SEED = () => ({
-  events: [
-    { id: 'evt_web26', name: 'THE WEB (RUN)', type: 'web', color: '#FF1F9F', win: 45, date: '2026-04-26', time: '', location: 'Fribourg', notes: "Course d'orientation urbaine.", checklist: [], debrief: {}, u: 1 },
-    { id: 'evt_fricat26', name: 'FRICAT', type: 'fricat', color: '#8FBF00', win: 30, date: '2026-06-07', time: '', location: 'Eleventh Floor, Granges-Paccot', notes: 'Co-event vélo avec Unshaved Legs Cycling Club. Co-posts : éviter le point de vue Silver Jersey seul.', checklist: [], debrief: {}, u: 1 },
-    { id: 'evt_ss3', name: 'THE SILVER SURFER EP.3', type: 'ss', color: '#221FFF', win: 45, date: '2026-08-30', time: '', location: 'Fribourg', notes: 'Triathlon modulable, sans chrono ni classement. Swim 2 km, bike 90 km, run 20 km.', checklist: [], debrief: {}, u: 1 }
-  ],
-  content: [],
-  sponsors: [
-    { id: 'sp_vw', site: 'vitaminwell.com', name: 'Vitamin Well', kind: 'rec', cat: 'produit', status: 'confirmed', contact: '', contactInfo: '', contribution: 'Boissons', value: 0, counterparts: [], relance: '', events: [], notes: '', u: 1 },
-    { id: 'sp_bb', site: 'barebells.com', name: 'Barebells', kind: 'rec', cat: 'produit', status: 'confirmed', contact: '', contactInfo: '', contribution: 'Barres protéinées', value: 0, counterparts: [], relance: '', events: [], notes: '', u: 1 },
-    { id: 'sp_dg', site: 'docteurgabs.ch', name: "Dr. Gab's", kind: 'rec', cat: 'produit', status: 'confirmed', contact: 'Gabs', contactInfo: '', contribution: 'Bières', value: 0, counterparts: [{ id: 'cp1', t: 'Post sponsor dédié', done: false }], relance: '', events: ['evt_ss3'], notes: '', u: 1 },
-    { id: 'sp_gm', site: 'granomate.ch', name: 'Grano Maté', kind: 'rec', cat: 'produit', status: 'confirmed', contact: '', contactInfo: '', contribution: '', value: 0, counterparts: [{ id: 'cp2', t: 'Post sponsor dédié', done: false }], relance: '', events: ['evt_ss3'], notes: '', u: 1 },
-    { id: 'sp_es', site: 'esaho.ch', name: 'Esaho', kind: 'rec', cat: 'matériel', status: 'confirmed', contact: '', contactInfo: '', contribution: '', value: 0, counterparts: [], relance: '', events: [], notes: '', u: 1 },
-    { id: 'sp_ef', site: 'eleventhfloor.ch', name: 'Eleventh Floor', kind: 'rec', cat: 'lieu', status: 'confirmed', contact: '', contactInfo: '', contribution: 'Accueil FRICAT', value: 0, counterparts: [], relance: '', events: ['evt_fricat26'], notes: '', u: 1 },
-    { id: 'sp_dc', site: 'decathlon.ch', name: 'Decathlon', kind: 'one', cat: 'produit', status: 'talks', contact: '', contactInfo: '', contribution: 'Gels, nutrition, matériel, prix gagnants', value: 0, counterparts: [], relance: '', events: [], notes: '', u: 1 },
-    { id: 'sp_an', site: 'andros.ch', name: 'Andros', kind: 'one', cat: 'produit', status: 'talks', contact: '', contactInfo: '', contribution: 'Produits short-dated, pickup à Nyon le mardi après-midi', value: 0, counterparts: [], relance: '', events: [], notes: 'Recontacter environ deux semaines avant chaque event.', u: 1 },
-    { id: 'sp_mbp', site: 'mybikeplan.ch', name: 'My Bike Plan', kind: 'one', cat: 'service', status: 'confirmed', contact: '', contactInfo: '', contribution: '', value: 0, counterparts: [{ id: 'cp3', t: 'Post sponsor dédié', done: false }], relance: '', events: ['evt_ss3'], notes: '', u: 1 },
-    { id: 'sp_bcf', site: 'bcf.ch', name: 'BCF', kind: 'one', cat: 'financier', status: 'todo', contact: 'Via Jocelyn', contactInfo: '', contribution: '', value: 0, counterparts: [], relance: '', events: [], notes: 'Dossier sponsoring à préparer (Henri).', u: 1 }
-  ],
-  tasks: [],
-  pvs: [
-    { id: 'pv_250917', title: 'Débrief The Silver Surfer EP.2 et situation actuelle', date: '2025-09-17', present: ['Maxime', 'Henri', 'Jocelyn', 'Axel'], eventId: null, u: 1,
-      body: "RETOURS D'EXPÉRIENCE\nHenri : bon déroulement global, seul imprévu le timing. Créer le groupe communauté WhatsApp en avance. Présence de Diego pour les photos à discuter. Besoin de staff en plus.\nJocelyn : 2 groupes pour les vélos avec un leader par groupe. Lac Noir pas idéal. Prévoir un desk d'accueil pour les prix et paiements.\nMaxime : ravitaillements trop serrés, plus d'espace entre les activités.\nAxel : ligne réservée à la piscine, mieux contrôler les sponsors.\n\nCHIFFRES INSTAGRAM (19 août au 17 sept.)\n163k vues, 685 interactions, 97 nouveaux followers. Audience 60% hommes, 25 à 34 ans.\n\nCOMPTES\nBénéfice pour cet event. Bon pour 3 personnes ayant manqué.\n\nRÔLES\nCommunication et branding : Maxime. Caisse, fournisseurs et merch : Axel. Logistique, commandes, site : Jocelyn. Endless Summer : Henri. Common Ground : Axel.",
-      tasks: [
-        { who: 'Jocelyn', text: 'Contacter Martial Schaller (gagnant sondage)', due: '', archived: true },
-        { who: 'Axel', text: 'Communiquer date, lieu et horaires Common Ground', due: '', archived: true },
-        { who: 'Maxime', text: 'Canva Common Ground', due: '', archived: true },
-        { who: 'Jocelyn', text: 'Boutique WooCommerce', due: '', archived: true },
-        { who: 'Maxime', text: 'Photos des t-shirts', due: '2025-10-01', archived: true },
-        { who: 'Axel', text: 'Infos musettes (taille, composition)', due: '', archived: true },
-        { who: 'Jocelyn', text: 'Contact Siroko Custom (maillot vélo)', due: '', archived: true },
-        { who: 'Maxime', text: 'Design déclinaison musettes', due: '', archived: true },
-        { who: 'Henri', text: 'Dossier sponsoring BCF', due: '', archived: true },
-        { who: 'Maxime', text: 'Slide statistiques The Silver Surfer', due: '', archived: true },
-        { who: 'Henri', text: "Comité d'association et registre du commerce", due: '', archived: true }
-      ] },
-    { id: 'pv_260611', title: 'THE LOOP EP.2', date: '2026-06-11', present: ['Maxime', 'Axel', 'Henri'], eventId: null, u: 1,
-      body: "LOGISTIQUE\nListes d'achat et de matériel sur WhatsApp. Axel s'occupe des achats.\n\nSPONSORS\nAxel : Vitamin Well, Barebells, Trango Sports. Henri : Decathlon (gels, nutrition, matériel) et Gabs (bières). Maxime : Chocolat Villars.\n\nAMÉLIORATIONS\nComptage : solution HTML, première ébauche par Maxime. Médias : Maxime réseaux, Diego photo.\n\nPLANIFICATION\nMise en place 14h à 15h30, accueil 15h30, speech 16h15, départ 16h30, fin de course 20h30, fin 22h. Changement de sens chaque heure.\n\nDIVERS\nGagnants : prix Decathlon. Record de l'an passé (349) battu : prochain event offert. Dossards holographiques à voir avec CRIC. Foulards : design, budget et mode de vente à valider.",
-      tasks: [
-        { who: 'Maxime', text: 'Préparer la solution de comptage', due: '', archived: true },
-        { who: 'Maxime', text: 'Contacter Chocolat Villars', due: '', archived: true },
-        { who: 'Axel', text: 'Faire les achats', due: '', archived: true },
-        { who: 'Axel', text: 'Contacter Schaffer pour les écrans et prises', due: '', archived: true },
-        { who: 'Axel', text: 'Coordonner Diego pour les photos', due: '', archived: true },
-        { who: 'Henri', text: 'Contacter Decathlon et Gabs', due: '', archived: true },
-        { who: 'Henri', text: 'Voir avec CRIC pour les dossards', due: '', archived: true },
-        { who: 'Jocelyn', text: 'Améliorer la solution de comptage si besoin', due: '', archived: true }
-      ] }
-  ],
+  events: [], content: [], sponsors: [], tasks: [], pvs: [],
   externals: [
     ...[['2026-01-01', 'Nouvel An'], ['2026-04-03', 'Vendredi Saint'], ['2026-04-06', 'Lundi de Pâques'], ['2026-05-01', 'Fête du Travail'], ['2026-05-14', 'Ascension'], ['2026-05-25', 'Lundi de Pentecôte'], ['2026-06-04', 'Fête-Dieu'], ['2026-08-01', 'Fête nationale'], ['2026-08-15', 'Assomption'], ['2026-11-01', 'Toussaint'], ['2026-12-08', 'Immaculée Conception'], ['2026-12-25', 'Noël'], ['2026-12-26', 'Saint-Étienne'],
       ['2027-01-01', 'Nouvel An'], ['2027-03-26', 'Vendredi Saint'], ['2027-03-29', 'Lundi de Pâques'], ['2027-05-01', 'Fête du Travail'], ['2027-05-06', 'Ascension'], ['2027-05-17', 'Lundi de Pentecôte'], ['2027-05-27', 'Fête-Dieu'], ['2027-08-01', 'Fête nationale'], ['2027-08-15', 'Assomption'], ['2027-11-01', 'Toussaint'], ['2027-12-08', 'Immaculée Conception'], ['2027-12-25', 'Noël'], ['2027-12-26', 'Saint-Étienne']
@@ -1152,12 +1026,27 @@ const LS = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } },
   del(k) { try { localStorage.removeItem(k); } catch (e) {} }
 };
+const SUPA_CFG = { url: 'https://buaodgzvnpajktktzrnz.supabase.co', key: 'sb_publishable_VNGUJKpBzO0WGeqGrmGpTg_ck8DoTkI' };
+const TEAM_EMAIL = 'info@silverjersey.ch';
+const AUTH = { get() { return LS.get('sj4:auth'); }, set(a) { LS.set('sj4:auth', a); }, clear() { LS.del('sj4:auth'); } };
+function supaCfg() { const c = LS.get('sj4:supa'); if (c && c.url && c.key) return c; if (SUPA_CFG.url && SUPA_CFG.key) return { ...SUPA_CFG }; return null; }
+async function supaAuth(cfg, body, grant) {
+  const r = await fetch(cfg.url.replace(/\/+$/, '') + '/auth/v1/token?grant_type=' + grant, { method: 'POST', headers: { apikey: cfg.key, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  if (!r.ok) throw new Error(r.status === 400 ? 'password' : 'auth ' + r.status);
+  const j = await r.json();
+  AUTH.set({ at: j.access_token, rt: j.refresh_token, exp: Date.now() + ((j.expires_in || 3600) - 120) * 1000 });
+}
+async function supaToken(force) {
+  const a = AUTH.get(); if (!a) throw new Error('login');
+  if (!force && Date.now() < a.exp) return a.at;
+  try { await supaAuth(Store.cfg, { refresh_token: a.rt }, 'refresh_token'); return AUTH.get().at; }
+  catch (e) { AUTH.clear(); showLogin(); throw new Error('login'); }
+}
 const Store = {
   mode: 'local', cfg: null,
   init() {
-    const a = LS.get('sj4:api'), c = LS.get('sj4:supa');
-    if (a && a.url && a.key) { this.mode = 'api'; this.cfg = a; }
-    else if (c && c.url && c.key) { this.mode = 'supa'; this.cfg = c; }
+    const c = supaCfg();
+    if (c && AUTH.get()) { this.mode = 'supa'; this.cfg = c; }
     else if (window.storage && typeof window.storage.get === 'function') this.mode = 'claude';
     else this.mode = 'local';
   },
@@ -1168,12 +1057,14 @@ const Store = {
     return r.json();
   },
   hd() { return supaHd(this.cfg.key, { 'Content-Type': 'application/json' }); },
+  async hda(force) { return { apikey: this.cfg.key, 'Content-Type': 'application/json', Authorization: 'Bearer ' + await supaToken(force) }; },
+  async sfetch(url, opt = {}) { let r = await fetch(url, { ...opt, headers: { ...(await this.hda()), ...(opt.headers || {}) } }); if (r.status === 401) r = await fetch(url, { ...opt, headers: { ...(await this.hda(true)), ...(opt.headers || {}) } }); return r; },
   base() { return this.cfg.url.replace(/\/+$/, '') + '/rest/v1/sj_store'; },
   async get(k) {
     if (this.mode === 'local') return LS.get('sj4:' + k);
     if (this.mode === 'api') return (await this.api({ action: 'get', key: k })).value;
     if (this.mode === 'claude') { try { const r = await window.storage.get('sj4:' + k, true); return r ? JSON.parse(r.value) : null; } catch (e) { return null; } }
-    const r = await fetch(this.base() + '?select=value&key=eq.' + encodeURIComponent(k), { headers: this.hd() });
+    const r = await this.sfetch(this.base() + '?select=value&key=eq.' + encodeURIComponent(k));
     if (!r.ok) throw new Error('get ' + r.status);
     const j = await r.json(); return j[0] ? j[0].value : null;
   },
@@ -1181,7 +1072,7 @@ const Store = {
     if (this.mode === 'api') return (await this.api({ action: 'getMany', keys })).values || {};
     if (this.mode !== 'supa') { const o = {}; for (const k of keys) o[k] = await this.get(k); return o; }
     const list = '(' + keys.map(k => '"' + k + '"').join(',') + ')';
-    const r = await fetch(this.base() + '?select=key,value&key=in.' + encodeURIComponent(list), { headers: this.hd() });
+    const r = await this.sfetch(this.base() + '?select=key,value&key=in.' + encodeURIComponent(list));
     if (!r.ok) throw new Error('getMany ' + r.status);
     const o = {}; (await r.json()).forEach(x => o[x.key] = x.value); return o;
   },
@@ -1189,14 +1080,14 @@ const Store = {
     if (this.mode === 'local') { if (!LS.set('sj4:' + k, v)) throw new Error('quota'); return; }
     if (this.mode === 'api') { await this.api({ action: 'set', key: k, value: v }); return; }
     if (this.mode === 'claude') { await window.storage.set('sj4:' + k, JSON.stringify(v), true); return; }
-    const r = await fetch(this.base(), { method: 'POST', headers: { ...this.hd(), Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify([{ key: k, value: v, updated_at: new Date().toISOString() }]) });
+    const r = await this.sfetch(this.base(), { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: JSON.stringify([{ key: k, value: v, updated_at: new Date().toISOString() }]) });
     if (!r.ok) throw new Error('set ' + r.status);
   },
   async del(k) {
     if (this.mode === 'local') return LS.del('sj4:' + k);
     if (this.mode === 'api') { try { await this.api({ action: 'del', key: k }); } catch (e) {} return; }
     if (this.mode === 'claude') { try { await window.storage.delete('sj4:' + k, true); } catch (e) {} return; }
-    await fetch(this.base() + '?key=eq.' + encodeURIComponent(k), { method: 'DELETE', headers: this.hd() });
+    await this.sfetch(this.base() + '?key=eq.' + encodeURIComponent(k), { method: 'DELETE' });
   }
 };
 
@@ -1216,7 +1107,7 @@ function syncHtml() {
   let cls = syncState, txt = '';
   if (syncState === 'busy') txt = 'Synchronisation';
   else if (syncState === 'err') txt = 'Hors ligne, réessai auto';
-  else txt = m === 'api' ? 'Synchronisé (silverjersey.ch)' : m === 'supa' ? 'Synchronisé (Supabase)' : m === 'claude' ? 'Partagé (Claude)' : 'Local, à connecter';
+  else txt = m === 'supa' ? 'Synchronisé' : 'Non connecté';
   if (m === 'local' && syncState === 'ok') cls = 'local';
   return `<div class="sync ${cls}" id="syncline" data-a="go" data-v="settings" style="cursor:pointer"><span class="dot"></span>${txt}</div>`;
 }
@@ -1466,7 +1357,7 @@ function renderSide() {
   const late = myOpen.filter(x => x.due && x.due < t).length;
   const active = UI.view === 'event' ? 'events' : UI.view;
   $('#side').innerHTML = `
-    <div class="brand"><div class="logo">SJ</div><div><b>Silver Jersey</b></div></div>
+    <div class="brand"><div class="logo"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FscXVlXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE4NjguNzIgMTg3NC4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMS0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzYxLjc3LDY5MC43NmMxMTMuOTEtMTIzLjk5LDEzNC4zNS0zMzAuMzUsNTguMzQtNDc0LjAyQzE3NDMuOTMsNzIuNzcsMTU4MC4zNi0xNS4wNywxNDEyLjcxLDMuMDljLTEyMS42LDEzLjE3LTIyNS43Nyw2My4zOC0yOTYuMDUsMTY3LjUxLTMyLjgzLDQ4LjY0LTIwLjcsMTA0LjE1LDIzLjExLDEzNy45Nyw0Mi40NSwzMi43OCw4NS41NywyNy45NiwxMjkuOTctMTQuNzcsNy44Ny03LjU3LDE0Ljk2LTE1Ljk0LDIyLjUxLTIzLjg1LDY0LjkzLTY4LjAyLDE1OS45Mi04Ni4yLDI0NS4yNy00Ni45NiwxMjcuMDEsNTguMzksMTY2LjcsMjE0Ljc4LDg0LjU3LDMzOC4zMS0xMTguNDYsMTc4LjE4LTIzOC4xNywzNTUuNTQtMzU2LjkyLDUzMy41NC00MS4zMiw2MS45NC04MS4zNSwxMjQuNzMtMTIxLjk2LDE4Ny4xM002OTcuNzcsMTEzLjQzQzYxMi4yMiwyOS4yOCw1MDMuODUtNy4wMSwzODQuOCwxLjExLDExMy4yNywxOS42NS01NS44MSwyNjguNTksMTYuOTEsNTM4LjE0YzIzLjA5LDg1LjU4LDY1LjEzLDE1OC45OSwxNDEuNjcsMjA3LjU4LDQ2Ljc1LDI5LjY4LDEwMS4yMSwxOC42NiwxMzQuNzgtMjMuMjQsMjguOTItMzYuMDksMjUuNzktODkuOTUtOC0xMjguNzgtOS4yMS0xMC41OC0yMC4wOS0xOS42OS0yOS41Ny0zMC4wNS03My42OC04MC41My04MC45NC0xODAuNzktMTkuNzQtMjcwLDU4Ljg4LTg1Ljg0LDE2Mi4zMi0xMTYuNTIsMjYxLTc1LjM5LDI4LjY1LDExLjk0LDU2LjEsMjcuNjksODIuMjMsNDQuNTgsMTcwLjU2LDExMC4yNSwzNDAuNzcsMjIxLjA0LDUxMC43NCwzMzIuMTgsNzEuMzYsNDYuNjYsMTQxLjg3LDk0LjYzLDIxMi43NiwxNDJNMTA0NS43LDE2NDEuODRjNDIuNSw0My41Myw4Mi4wMyw5MS4yNywxMjkuOTIsMTI3Ljk4LDE0Mi43OCwxMDkuNDYsMzAwLjksMTM3Ljk4LDQ2NS43OCw1Ny4yNywxNTguNDktNzcuNTgsMjMzLjM2LTIxMS44NywyMjYuOTQtMzg3LjUtNC4zNi0xMTkuMi01Ni42NS0yMTkuMzMtMTQyLjQ0LTMwMC45Ny00Mi45Mi00MC44NC0xMDEuNzMtMzYuOTctMTQyLjc4LDQuMjctNDEuNTksNDEuNzgtNDIuMjYsODMuMjctMi4yOSwxMzIuNTUsMTkuNjEsMjQuMTksNDEuNjgsNDYuODksNTguMDIsNzMuMTMsNDUuMjYsNzIuNyw0NC4zOCwxNDguMzQsMy4zMywyMjIuMTUtMzkuOTQsNzEuODItMTA4LjE4LDEwMC43My0xODUuMzMsOTUuODUtNDYuMjItMi45My05NS4zMy0xOS40My0xMzUuNzYtNDIuNjUtMTAxLjQ3LTU4LjI5LTE5OS4wMi0xMjMuNDQtMjk3LjYzLTE4Ni42NC0xNDUuNzUtOTMuNDMtMjkxLjA1LTE4Ny41NS00MzYuNTQtMjgxLjM4TTEzNy40NSwxMTQ4Ljk4Yy03Ny41Niw3Ni4xMi0xMTkuMzgsMTY1LjU2LTEzMi43OSwyNzEuMjQtMjMuMzgsMTg0LjIxLDY4Ljk5LDM0NC43OCwyNDMuNDMsNDIxLjYsMTU5Ljg2LDcwLjQsMzY5Ljc2LDIyLjU0LDQ3OS40OC0xMDkuMzQsMzQuODUtNDEuODksMzYuMjgtOTYuNjEsMy40Ni0xMzIuMTYtMzMuNTMtMzYuMzEtODcuNzEtNDAuOTItMTMyLjIyLTkuOC0xOS4xNCwxMy4zOS0zNS44NCwzMC4yMS01NC42MSw0NC4xOS03NS43OCw1Ni40OS0xOTMuOTgsNTIuOTUtMjcxLjU5LTcuNTgtNzcuNDktNjAuNDQtMTAzLjM0LTE1OS45NS02Mi4wNi0yNTEuODIsMTUuODctMzUuMzIsMzcuMzEtNjguNDYsNTguNzktMTAwLjksMTMyLjcyLTIwMC40LDI2Ni4zLTQwMC4yMywzOTkuMjMtNjAwLjUsMTkuNDktMjkuMzYsMzYuOTctNjAuMDQsNTUuMzgtOTAuMTEiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTE0My4yLDEyODEuOTZjNDAuNjItNjIuNCw4MC42NS0xMjUuMTksMTIxLjk2LTE4Ny4xMywxMTguNzQtMTc4LDIzOC40NS0zNTUuMzUsMzU2LjkyLTUzMy41NCw4Mi4xMy0xMjMuNTMsNDIuNDQtMjc5LjkyLTg0LjU3LTMzOC4zMS04NS4zNS0zOS4yNC0xODAuMzQtMjEuMDYtMjQ1LjI3LDQ2Ljk2LTcuNTUsNy45MS0xNC42NCwxNi4yOC0yMi41MSwyMy44NS00NC4zOSw0Mi43NC04Ny41MSw0Ny41NS0xMjkuOTcsMTQuNzctNDMuODEtMzMuODItNTUuOTMtODkuMzMtMjMuMTEtMTM3Ljk3LDcwLjI3LTEwNC4xMywxNzQuNDQtMTU0LjM0LDI5Ni4wNS0xNjcuNTEsMTY3LjY2LTE4LjE2LDMzMS4yMiw2OS42OCw0MDcuNCwyMTMuNjUsNzYuMDIsMTQzLjY3LDU1LjU3LDM1MC4wMy01OC4zNCw0NzQuMDItMTE3LjI0LDEyNy42MS0yNDMuMDksMjQ3LjM2LTM2NS42MywzNzAuMSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMzAyLjc4LDczNy4wMmMtNzAuODktNDcuMzctMTQxLjQtOTUuMzQtMjEyLjc2LTE0Mi0xNjkuOTctMTExLjE1LTM0MC4xOC0yMjEuOTQtNTEwLjc0LTMzMi4xOC0yNi4xMy0xNi44OS01My41OC0zMi42NC04Mi4yMy00NC41OC05OC42OC00MS4xMy0yMDIuMTItMTAuNDQtMjYxLDc1LjM5LTYxLjE5LDg5LjIxLTUzLjkzLDE4OS40NywxOS43NCwyNzAsOS40OCwxMC4zNiwyMC4zNywxOS40NywyOS41NywzMC4wNSwzMy43OSwzOC44MywzNi45Miw5Mi43LDgsMTI4Ljc4LTMzLjU3LDQxLjktODguMDMsNTIuOTItMTM0Ljc4LDIzLjI0LTc2LjU0LTQ4LjU5LTExOC41OC0xMjEuOTktMTQxLjY3LTIwNy41OEMtNTUuODEsMjY4LjU5LDExMy4yNywxOS42NSwzODQuOCwxLjExYzExOS4wNS04LjEzLDIyNy40MiwyOC4xNywzMTIuOTcsMTEyLjMxLDE0OC4wOCwxNDUuNjUsMjkyLjMsMjk1LjIyLDQzNy45OCw0NDMuMzEiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNTg2LjkyLDExNTUuODljMTQ1LjQ5LDkzLjgzLDI5MC43OSwxODcuOTYsNDM2LjU0LDI4MS4zOCw5OC42LDYzLjIsMTk2LjE2LDEyOC4zNSwyOTcuNjMsMTg2LjY0LDQwLjQyLDIzLjIyLDg5LjU0LDM5LjczLDEzNS43Niw0Mi42NSw3Ny4xNCw0Ljg4LDE0NS4zOC0yNC4wMywxODUuMzMtOTUuODUsNDEuMDUtNzMuODEsNDEuOTMtMTQ5LjQ1LTMuMzMtMjIyLjE1LTE2LjM0LTI2LjI0LTM4LjQtNDguOTQtNTguMDItNzMuMTMtMzkuOTctNDkuMjgtMzkuMy05MC43NywyLjI5LTEzMi41NSw0MS4wNS00MS4yNCw5OS44Ny00NS4xMSwxNDIuNzgtNC4yNyw4NS43OCw4MS42NCwxMzguMDgsMTgxLjc3LDE0Mi40NCwzMDAuOTcsNi40MiwxNzUuNjMtNjguNDUsMzA5LjkyLTIyNi45NCwzODcuNS0xNjQuODgsODAuNzEtMzIzLDUyLjE5LTQ2NS43OC01Ny4yNy00Ny44OS0zNi43MS04Ny40Mi04NC40NS0xMjkuOTItMTI3Ljk4Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcyMy45NCw1ODMuOGMtMTguNDEsMzAuMDctMzUuODksNjAuNzUtNTUuMzgsOTAuMTEtMTMyLjkyLDIwMC4yNy0yNjYuNTEsNDAwLjEtMzk5LjIzLDYwMC41LTIxLjQ4LDMyLjQzLTQyLjkyLDY1LjU4LTU4Ljc5LDEwMC45LTQxLjI3LDkxLjg3LTE1LjQzLDE5MS4zOCw2Mi4wNiwyNTEuODIsNzcuNiw2MC41MywxOTUuOCw2NC4wNywyNzEuNTksNy41OCwxOC43Ni0xMy45OSwzNS40Ni0zMC44MSw1NC42MS00NC4xOSw0NC41MS0zMS4xMiw5OC42OS0yNi41MSwxMzIuMjIsOS44LDMyLjgyLDM1LjU1LDMxLjM5LDkwLjI3LTMuNDYsMTMyLjE2LTEwOS43MiwxMzEuODgtMzE5LjYyLDE3OS43NC00NzkuNDgsMTA5LjM0QzczLjY0LDE3NjUtMTguNzMsMTYwNC40Myw0LjY2LDE0MjAuMjNjMTMuNDItMTA1LjY4LDU1LjIzLTE5NS4xMywxMzIuNzktMjcxLjI0Ii8+PC9nPjwvc3ZnPg==" alt=""></div><div><b>Silver Jersey</b></div></div>
     <button class="search-btn" data-a="palette">${ic('search', 16)}<span>Rechercher</span><kbd>⌘K</kbd></button>
     ${NAV.map(n => n.sep ? `<div style="height:14px"></div>` : `<button class="nav ${active === n.id ? 'on' : ''}" data-a="go" data-v="${n.id}">${ic(n.ic)}<span>${n.l}</span>${n.id === 'tasks' && myOpen.length ? `<span class="bdg ${late ? 'bad' : ''}">${myOpen.length}</span>` : ''}</button>`).join('')}
     <div class="side-foot">
@@ -1852,7 +1743,7 @@ function vEvent() {
     o += `<div class="card" style="background:${rgba(c, .06)}"><div class="c-head"><div><div class="c-title">Retenu de ${esc(pe.name)}</div><div class="c-sub">${fF(pe.date)}${pdb.participants ? ', ' + plural(+pdb.participants, 'participant·e', 'participant·e·s') : ''}</div></div><button class="c-link" data-a="open-event" data-id="${pe.id}">Ouvrir ${ic('right', 12)}</button></div>
       ${pdb.improve ? `<div class="fl">À améliorer</div><div style="margin-bottom:12px">${pdb.improve.split('\n').map(l => l.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).map(l => `<div class="cl-row" style="padding:4px 2px"><span style="flex:1;font-size:13px;line-height:1.45">${esc(l)}</span><button class="ibtn sm pinb ${inBase(e.type, l) ? 'on' : ''}" data-a="pin-txt" data-type="${e.type}" data-t="${esc(l)}" data-tip="Garder pour les prochaines éditions">${ic('pin', 12)}</button></div>`).join('')}</div>` : ''}
       ${pdb.good ? `<div class="fl">Ce qui a marché</div><div style="font-size:13px;line-height:1.55;white-space:pre-wrap;margin-bottom:12px">${esc(pdb.good)}</div>` : ''}
-      ${!pdb.improve && !pdb.good ? '<div class="c-sub" style="margin-bottom:12px">Pas de débrief rempli pour cette édition.</div>' : ''}
+      ${!pdb.improve && !pdb.good ? '<div class="c-sub" style="margin-bottom:12px">Pas de débrief</div>' : ''}
       ${psp.length ? `<div class="fl">Sponsors de l'an passé</div>${psp.map(x => `<div class="ln">${logoHtml(x, 's')}<span class="ln-t">${esc(x.name)}</span><button class="btn btn-light btn-sm" data-a="link-sp-direct" data-id="${x.id}" data-ev="${e.id}">${ic('plus', 12)}Ajouter</button></div>`).join('')}` : ''}</div>`;
   }
   const db = e.debrief || {};
@@ -1930,8 +1821,8 @@ function vTasks() {
   const open = base.filter(x => x.status !== 'done'), done = base.filter(x => x.status === 'done').sort((a, b) => (b.u || 0) - (a.u || 0));
   const lateN = open.filter(x => x.due && x.due < t).length;
   let o = head('Tâches', `${plural(open.length, 'ouverte')}${lateN ? ', ' + lateN + ' en retard' : ''}`, `<button class="ibtn" data-a="tk-wa" data-tip="Copier pour WhatsApp">${ic('msg', 17)}</button><div class="seg">${[['urgence', 'Urgence'], ['personne', 'Personne'], ['event', 'Event']].map(([k, l]) => `<button class="${UI.tkGroup === k ? 'on' : ''}" data-a="tk-group" data-g="${k}">${l}</button>`).join('')}</div>`);
-  o += `<div class="qa" style="margin-bottom:6px">${ic('plus', 18)}<input data-k="quick-task" placeholder="Nouvelle tâche. @Prénom pour assigner, #event pour lier, demain, vendredi ou 20.10 pour la date"><button class="btn btn-dark btn-sm" data-a="quick-task-btn">Ajouter</button></div><div class="qa-preview" id="qa-prev" style="margin:0 6px 16px"></div>`;
-  o += `<div class="filters">${UI.me ? `<button class="chip ${UI.tkMine ? 'on' : ''}" data-a="tk-mine">${av(UI.me, 's')}Mes tâches</button>` : `<span class="c-sub">Choisis ton profil en bas du menu pour filtrer tes tâches.</span>`}<button class="chip ${UI.tkDone ? 'on' : ''}" data-a="tk-done">Afficher les faites (${done.length})</button></div>`;
+  o += `<div class="qa" style="margin-bottom:6px">${ic('plus', 18)}<input data-k="quick-task" placeholder="Nouvelle tâche, @Prénom, #event, vendredi"><button class="btn btn-dark btn-sm" data-a="quick-task-btn">Ajouter</button></div><div class="qa-preview" id="qa-prev" style="margin:0 6px 16px"></div>`;
+  o += `<div class="filters">${UI.me ? `<button class="chip ${UI.tkMine ? 'on' : ''}" data-a="tk-mine">${av(UI.me, 's')}Mes tâches</button>` : ''}<button class="chip ${UI.tkDone ? 'on' : ''}" data-a="tk-done">Afficher les faites (${done.length})</button></div>`;
   const groups = [];
   if (UI.tkGroup === 'urgence') {
     groups.push(['En retard', open.filter(x => x.due && x.due < t), 'bad']);
@@ -1950,7 +1841,7 @@ function vTasks() {
     list.sort((a, b) => (a.due || '9').localeCompare(b.due || '9'));
     o += `<div class="tgroup"><div class="tg-h ${cls || ''}">${who ? av(who, 's') : ''}${e ? `<span class="dotc" style="background:${evColor(e)}"></span>` : ''}${esc(l)} <span class="n">${list.length}</span></div>${list.map(tkRow).join('')}</div>`;
   });
-  if (!open.length) o += `<div class="card"><div class="empty">Tout est fait. Belle équipe.</div></div>`;
+  if (!open.length) o += `<div class="card"><div class="empty">Tout est fait</div></div>`;
   if (UI.tkDone && done.length) o += `<div class="tgroup" style="margin-top:20px"><div class="tg-h">Faites <span class="n">${done.length}</span></div>${done.slice(0, 40).map(tkRow).join('')}</div>`;
   return o;
 }
@@ -2229,7 +2120,7 @@ const PVX = (() => {
 
 const whoList = x => [x.who, ...(x.also || [])].filter((v, i, a) => v && a.indexOf(v) === i);
 const isMine = x => !!UI.me && whoList(x).includes(UI.me);
-const ALIASES = ['Morave|Movare', 'Docteur Bahs|Dr. Gab\'s', 'Docteur Gabs|Dr. Gab\'s', 'Barbells|Barebells', 'Oschner|Ochsner Sport', '3ème chambre|Troisième chambre', 'Peak|PEAQ', 'Compress Sport|Compressport', 'Redbull|Red Bull', 'Ovolmaltine|Ovomaltine', 'Blackrool|Blackroll'];
+const ALIASES = [];
 function knownNames() { return [...live('sponsors').map(x => x.name), ...live('events').map(x => x.name), ...(S().types || []).map(t => t.label), 'Silver Jersey', 'WhatsApp', 'Instagram', 'Strava', ...ALIASES.filter(a => live('sponsors').some(s => s.name === a.split('|')[1]))].filter(Boolean).sort((a, b) => b.length - a.length); }
 function pvAnalyze(p) { return PVX.analyze(p.body, members().map(m => m.name), today(), knownNames()); }
 function parseBody(body) {
@@ -2310,13 +2201,13 @@ function pvEditor() {
   const p = UI.pv;
   const open = live('tasks').filter(x => x.status !== 'done');
   let o = `<div class="row" style="justify-content:space-between;flex-wrap:wrap;margin-bottom:10px"><button class="btn btn-ghost btn-sm" data-a="pv-back">${ic('left', 14)}Réunions</button>
-    <div class="h-actions"><div class="seg"><button class="${UI.pvMode !== 'view' ? 'on' : ''}" data-a="pv-mode" data-m="edit">Notes</button><button class="${UI.pvMode === 'view' ? 'on' : ''}" data-a="pv-mode" data-m="view">Aperçu</button></div><button class="btn btn-light btn-sm" data-a="pv-format" data-tip="Range les notes par thème et regroupe les tâches par personne">${ic('wand', 14)}Mettre en forme</button><button class="btn btn-light btn-sm" data-a="pv-wa">${ic('msg', 14)}Copier pour WhatsApp</button><button class="btn btn-light btn-sm" data-a="pv-pdf">${ic('print', 14)}PDF</button>${p._new ? '' : `<button class="ibtn" data-a="pv-del" data-tip="Supprimer">${ic('trash', 16)}</button>`}<button class="btn btn-dark" data-a="pv-save">Enregistrer</button></div></div>`;
+    <div class="h-actions"><div class="seg"><button class="${UI.pvMode !== 'view' ? 'on' : ''}" data-a="pv-mode" data-m="edit">Notes</button><button class="${UI.pvMode === 'view' ? 'on' : ''}" data-a="pv-mode" data-m="view">Aperçu</button></div><button class="btn btn-light btn-sm" data-a="pv-format" data-tip="Range les notes par thème et regroupe les tâches par personne">${ic('wand', 14)}<span class="bt">Mettre en forme</span></button><button class="btn btn-light btn-sm" data-a="pv-wa" data-tip="Copier pour WhatsApp">${ic('msg', 14)}<span class="bt">Copier pour WhatsApp</span></button><button class="btn btn-light btn-sm" data-a="pv-pdf">${ic('print', 14)}<span class="bt">PDF</span></button>${p._new ? '' : `<button class="ibtn" data-a="pv-del" data-tip="Supprimer">${ic('trash', 16)}</button>`}<button class="btn btn-dark" data-a="pv-save">Enregistrer</button></div></div>`;
   o += `<input class="pv-title" data-i="pv-title" value="${esc(p.title)}" placeholder="Titre de la réunion">
     <div class="pv-meta"><input class="f" type="date" data-i="pv-date" value="${p.date}"><select class="f" data-c="pv-ev"><option value="">Aucun event lié</option>${live('events').sort(byDate).reverse().map(e => `<option value="${e.id}" ${p.eventId === e.id ? 'selected' : ''}>${esc(e.name)}</option>`).join('')}</select>
     ${members().map(m => `<span class="pchip ${(p.present || []).includes(m.name) ? 'on' : ''}" data-a="pv-present" data-n="${esc(m.name)}">${av(m.name, 's')}${esc(m.name)}</span>`).join('')}</div>`;
-  o += `<div class="grid"><div class="s8">${UI.pvMode === 'view' ? `<div class="pvv">${pvView(p)}</div>` : `<div class="pv-ed"><div class="pv-hl" id="pv-hl" aria-hidden="true"></div><textarea class="pv-body" data-i="pv-body" spellcheck="true" placeholder="TITRE DE SECTION EN MAJUSCULES&#10;Notes en vrac. @Prénom ou -> Prénom pour une tâche.">${esc(p.body)}</textarea></div>`}
-    <div class="pv-hint">${p.legacy ? `Ancien PV : seules les lignes <b>@Prénom</b> sont des tâches. <button class="c-link" data-a="pv-detect">Détecter les tâches dans les notes</button>` : `Tâches détectées automatiquement. <b>@Prénom</b> pour forcer.`} <button class="c-link" data-a="pv-agenda" style="margin-left:6px">Ordre du jour</button></div></div>
-    <div class="s4" style="display:flex;flex-direction:column;gap:18px"><div class="card"><div class="c-head"><div class="c-title">Tâches détectées</div><span class="c-sub" id="pvt-n"></span></div><div class="c-sub" style="margin:-6px 0 10px;font-size:12px">Créées dans Tâches à l’enregistrement. Choisis qui si besoin, les doublons sont ignorés.</div><div id="pvt-list"></div>
+  o += `<div class="grid"><div class="s8">${UI.pvMode === 'view' ? `<div class="pvv">${pvView(p)}</div>` : `<div class="pv-ed"><div class="pv-hl" id="pv-hl" aria-hidden="true"></div><textarea class="pv-body" data-i="pv-body" spellcheck="true" placeholder="SECTION EN MAJUSCULES&#10;Notes, @Prénom pour une tâche">${esc(p.body)}</textarea></div>`}
+    <div class="pv-hint">${p.legacy ? `Ancien PV : seules les lignes <b>@Prénom</b> sont des tâches. <button class="c-link" data-a="pv-detect">Détecter les tâches dans les notes</button>` : ''} <button class="c-link" data-a="pv-agenda" style="margin-left:6px">Ordre du jour</button></div></div>
+    <div class="s4" style="display:flex;flex-direction:column;gap:18px"><div class="card"><div class="c-head"><div class="c-title">Tâches détectées</div><span class="c-sub" id="pvt-n"></span></div><div id="pvt-list"></div>
       <div class="pvb"><select name="pvt-who"><option value="">Qui</option>${members().map(m => `<option>${esc(m.name)}</option>`).join('')}</select><input name="pvt-text" placeholder="Tâche" data-k="pvt-add"><input name="pvt-due" type="date"><button class="ibtn" style="background:var(--ink);color:#fff" data-a="pvt-add">${ic('plus', 16)}</button></div></div>
       <div class="card"><div class="c-head"><div class="c-title">À passer en revue</div><span class="c-sub">${open.length} ouvertes</span></div>
       ${members().map(m => { const l = open.filter(x => whoList(x).includes(m.name)); return l.length ? `<div style="margin-bottom:10px"><div class="row" style="font-size:12px;font-weight:600;margin-bottom:4px">${av(m.name, 's')}${esc(m.name)}</div>${l.slice(0, 8).map(x => `<div class="ln" style="padding:6px 0"><span class="ck ${x.status === 'doing' ? 'half' : ''}" data-a="tk-toggle" data-id="${x.id}"></span><span class="ln-t">${esc(x.title)}</span><span class="ln-m">${x.due ? fS(x.due) : ''}</span></div>`).join('')}</div>` : ''; }).join('') || '<div class="empty">Rien d\'ouvert</div>'}</div></div></div>`;
@@ -2454,38 +2345,15 @@ create policy "sj_open" on sj_store
 function vSettings() {
   const s = S(), m = Store.mode;
   let o = head('Réglages', '');
-  o += `<div class="grid"><div class="s6" style="display:flex;flex-direction:column;gap:18px">`;
-  const defApi = location.protocol.startsWith('http') ? new URL('sj-api.php', location.href).href : 'https://silverjersey.ch/dashboard/sj-api.php';
-  o += `<div class="card"><div class="c-head"><div class="c-title">Stockage partagé</div><span class="stat"><span class="dotc" style="background:${m === 'api' || m === 'supa' ? 'var(--ok)' : 'var(--warn)'}"></span>${m === 'api' ? 'Infomaniak' : m === 'supa' ? 'Supabase' : m === 'claude' ? 'Stockage Claude' : 'Local (cet appareil)'}</span></div>`;
-  if (m === 'api' || m === 'supa') {
-    o += `<p class="c-sub" style="margin-bottom:12px">${esc(Store.cfg.url)}</p><div class="row"><button class="btn btn-light btn-sm" data-a="supa-pull">${ic('refresh', 14)}Synchroniser</button><button class="btn btn-ghost btn-sm" data-a="${m === 'api' ? 'api-off' : 'supa-off'}">Déconnecter</button></div>`;
-  } else {
-    o += `
-      <div class="seg" style="margin-bottom:14px"><button class="${UI.stoTab !== 'supa' ? 'on' : ''}" data-a="sto-tab" data-v="api">Infomaniak</button><button class="${UI.stoTab === 'supa' ? 'on' : ''}" data-a="sto-tab" data-v="supa">Supabase</button></div>`;
-    if (UI.stoTab !== 'supa') {
-      o += `<details style="margin-bottom:14px"><summary class="c-link" style="cursor:pointer;margin-bottom:8px">Comment faire</summary><ol style="font-size:13px;color:var(--ink2);padding-left:18px;line-height:1.7"><li>Dans le fichier sj-api.php, remplace CHANGE-ME par un mot de passe d'équipe</li><li>Sur l'hébergement Infomaniak (FTP ou gestionnaire de fichiers), crée un dossier dashboard et dépose dedans ce dashboard renommé index.html et sj-api.php</li><li>Ouvre silverjersey.ch/dashboard, puis colle ici le mot de passe</li></ol></details>
-        <div class="fg"><label class="fl">Adresse de l'API</label><input class="fi" id="api-url" value="${esc(defApi)}"></div>
-        <div class="fg"><label class="fl">Mot de passe d'équipe</label><input class="fi" id="api-key" type="password" placeholder="Le mot de passe mis dans sj-api.php"></div>
-        <button class="btn btn-dark" data-a="api-on">${ic('bolt', 15)}Connecter</button>
-`;
-    } else {
-      o += `<details style="margin-bottom:14px"><summary class="c-link" style="cursor:pointer;margin-bottom:8px">Comment faire</summary><ol style="font-size:13px;color:var(--ink2);padding-left:18px;line-height:1.7"><li>supabase.com, New project (région Frankfurt)</li><li>SQL Editor, colle le script ci-dessous, Run</li><li>Project Settings, API Keys : copie l'URL du projet et la clé publishable (ou anon)</li><li>Colle-les ici puis Connecter</li></ol></details>
-        <pre class="code">${esc(SQL)}</pre><button class="btn btn-ghost btn-sm" data-a="copy-sql" style="margin:8px 0 14px">${ic('copy', 14)}Copier le SQL</button>
-        <div class="fg"><label class="fl">Project URL</label><input class="fi" id="supa-url" placeholder="https://xxxx.supabase.co"></div>
-        <div class="fg"><label class="fl">Clé anon public</label><input class="fi" id="supa-key" placeholder="eyJhbGciOi..."></div>
-        <button class="btn btn-dark" data-a="supa-on">${ic('bolt', 15)}Connecter</button>`;
-    }
-  }
-  o += `</div>`;
+  o += `<div class="setcol">`;
+  o += `<div class="card"><div class="c-head"><div class="c-title">Compte d’équipe</div><span class="stat"><span class="dotc" style="background:var(--ok)"></span>Connecté</span></div>
+    <div class="row"><button class="btn btn-light btn-sm" data-a="supa-pull">${ic('refresh', 14)}Synchroniser</button><button class="btn btn-ghost btn-sm" data-a="logout">Se déconnecter</button></div></div>`;
   const ig = s.instaFeed;
-  o += `<div class="card"><div class="c-head"><div class="c-title">Feed Instagram réel</div><span class="stat"><span class="dotc" style="background:${ig && IG.data ? 'var(--ok)' : ig && IG.err ? 'var(--bad)' : 'var(--ink3)'}"></span>${ig ? (IG.data ? IG.data.posts.length + ' posts chargés' : IG.err ? 'Erreur' : 'Chargement') : 'Non connecté'}</span></div>
-    <details style="margin-bottom:14px"><summary class="c-link" style="cursor:pointer;margin-bottom:8px">Comment faire</summary><ol style="font-size:13px;color:var(--ink2);padding-left:18px;line-height:1.7"><li>behold.so, créer un compte gratuit</li><li>Connecter le compte Instagram (compte pro ou créateur)</li><li>Créer un feed, type JSON, copier son URL</li><li>La coller ici</li></ol></details>
+  o += `<div class="card"><div class="c-head"><div class="c-title">Feed Instagram</div><span class="stat"><span class="dotc" style="background:${ig && IG.data ? 'var(--ok)' : ig && IG.err ? 'var(--bad)' : 'var(--ink3)'}"></span>${ig ? (IG.data ? IG.data.posts.length + ' posts chargés' : IG.err ? 'Erreur' : 'Chargement') : 'Non connecté'}</span></div>
     <div class="row" style="flex-wrap:wrap"><input class="fi" id="ig-url" value="${esc(ig || '')}" placeholder="https://feeds.behold.so/..." style="flex:1;min-width:220px"><button class="btn btn-dark btn-sm" data-a="ig-save">Enregistrer</button></div></div>`;
   o += `<div class="card"><div class="c-head"><div class="c-title">Équipe</div></div>${s.members.map((mm, i) => `<div class="set-row">${av(mm.name)}<input type="text" value="${esc(mm.name)}" data-c="set-member" data-i="${i}" data-f="name" style="flex:1"><input type="color" value="${mm.color}" data-c="set-member" data-i="${i}" data-f="color"></div>`).join('')}</div>`;
-  o += `<div class="card"><div class="c-head"><div class="c-title">Données</div></div><div class="row" style="flex-wrap:wrap"><button class="btn btn-light btn-sm" data-a="export">${ic('down', 14)}Export JSON</button><button class="btn btn-light btn-sm" data-a="import">${ic('up', 14)}Importer JSON</button><button class="btn btn-bad btn-sm" data-a="reset">Réinitialiser</button></div></div>`;
-  o += `</div><div class="s6" style="display:flex;flex-direction:column;gap:18px">`;
+  o += `<div class="card"><div class="c-head"><div class="c-title">Sauvegarde</div></div><div class="row" style="flex-wrap:wrap"><button class="btn btn-light btn-sm" data-a="export">${ic('down', 14)}Export JSON</button><button class="btn btn-light btn-sm" data-a="import">${ic('up', 14)}Importer JSON</button></div></div>`;
   o += `<div class="card"><div class="c-head"><div class="c-title">Plan de communication automatique</div><button class="btn btn-ghost btn-sm" data-a="plan-add">${ic('plus', 13)}Ligne</button></div>
-    <p class="c-sub" style="margin-bottom:10px">Base ${s.planBase || 45} jours. Dates fixes à partir de J-21.</p>
     ${(s.plan || []).map((r, i) => `<div class="set-row"><input type="number" value="${r.d}" data-c="set-plan" data-i="${i}" data-f="d" style="width:68px" data-tip="Jours par rapport à l'event"><select data-c="set-plan" data-i="${i}" data-f="ch">${Object.entries(CH).map(([ck, cv]) => `<option value="${ck}" ${r.ch === ck ? 'selected' : ''}>${cv.l}</option>`).join('')}</select><input type="text" value="${esc(r.t)}" data-c="set-plan" data-i="${i}" data-f="t" style="flex:1"><button class="ibtn sm" data-a="plan-del" data-i="${i}">${ic('x', 13)}</button></div>`).join('')}</div>`;
   o += `<div class="card"><div class="c-head"><div class="c-title">Plan de tâches automatique</div><button class="btn btn-ghost btn-sm" data-a="tplan-add">${ic('plus', 13)}Ligne</button></div>
     ${(s.taskPlan || []).map((r, i) => `<div class="set-row"><input type="number" value="${r.d}" data-c="set-tplan" data-i="${i}" data-f="d" style="width:68px" data-tip="Jours par rapport à l'event"><select data-c="set-tplan" data-i="${i}" data-f="who"><option value="">Personne</option>${s.members.map(mm => `<option ${r.who === mm.name ? 'selected' : ''}>${esc(mm.name)}</option>`).join('')}</select><input type="text" value="${esc(r.t)}" data-c="set-tplan" data-i="${i}" data-f="t" style="flex:1"><button class="ibtn sm" data-a="tplan-del" data-i="${i}">${ic('x', 13)}</button></div>`).join('')}</div>`;
@@ -2495,7 +2363,8 @@ function vSettings() {
     <div class="set-row" style="flex-wrap:wrap"><input type="date" id="x-date" data-tip="Début"><input type="date" id="x-end" data-tip="Fin (optionnel)"><input type="text" id="x-label" placeholder="Libellé" style="flex:1;min-width:140px"><select id="x-type">${XT.map(([k, l]) => `<option value="${k}">${l}</option>`).join('')}</select><button class="btn btn-dark btn-sm" data-a="x-add">Ajouter</button></div>
 
     <div style="max-height:420px;overflow-y:auto;margin-top:6px">${ex.map(x => `<div class="set-row"><span class="dotc" style="background:${statC(XT, x.type)}"></span><span style="width:120px;font-size:12.5px;color:var(--ink2)">${fD(x.date, { day: 'numeric', month: 'short', year: '2-digit' })}${x.end ? ' au ' + fD(x.end, { day: 'numeric', month: 'short' }) : ''}</span><span style="flex:1;font-size:13px">${esc(x.label)}</span><button class="ibtn sm" data-a="x-del" data-id="${x.id}">${ic('x', 13)}</button></div>`).join('')}</div></div>`;
-  o += `</div></div>`;
+  o += `</div>`;
+  o = o.replace(/<div class="card"><div class="c-head"><div class="c-title">([^<]+)<\/div>/g, (m, t) => `<div class="card acc ${UI.acc === t ? '' : 'closed'}"><div class="c-head" data-a="acc" data-t="${esc(t)}"><div class="c-title">${t}</div>`);
   return o;
 }
 /* =========================================================
@@ -2647,7 +2516,7 @@ function mSponsor(id, def = {}) {
   mState = { rec: s, ref: s.ref || '', kind: s.kind, status: s.status, events: [...(s.events || [])], cps: JSON.parse(JSON.stringify(s.counterparts || [])), logo: null, logoDel: false };
   modal(`<div class="m-h"><span class="m-t">${isNew ? 'Nouveau sponsor' : 'Sponsor'}</span><button class="ibtn" data-a="close">${ic('x')}</button></div><div class="m-b">
     <div class="row" style="gap:14px;align-items:center;margin-bottom:6px"><span id="sp-logo">${logoHtml(s, 'l')}</span><input class="big" name="name" data-i="sp-name" value="${esc(s.name)}" placeholder="Nom" ${isNew ? 'autofocus' : ''} style="flex:1"></div>
-    <div class="row" style="gap:8px;margin-bottom:16px;flex-wrap:wrap"><input class="fi" name="site" data-i="sp-site" value="${esc(s.site || '')}" placeholder="Site web, ex. vitaminwell.com (pour afficher le logo)" style="flex:1;min-width:200px"><button class="btn btn-light btn-sm" data-a="pick-logo">${ic('image', 14)}Importer un logo</button>${s.hasLogo ? `<button class="btn btn-ghost btn-sm" data-a="rm-logo">Retirer</button>` : ''}</div>
+    <div class="row" style="gap:8px;margin-bottom:16px;flex-wrap:wrap"><input class="fi" name="site" data-i="sp-site" value="${esc(s.site || '')}" placeholder="Site web (logo)" style="flex:1;min-width:200px"><button class="btn btn-light btn-sm" data-a="pick-logo">${ic('image', 14)}Importer un logo</button>${s.hasLogo ? `<button class="btn btn-ghost btn-sm" data-a="rm-logo">Retirer</button>` : ''}</div>
     <div class="fg"><label class="fl">Référent·e Silver Jersey</label><div class="opts">${members().map(m => `<button class="opt ${s.ref === m.name ? 'on' : ''}" data-a="opt" data-g="ref" data-v="${esc(m.name)}">${av(m.name, 's')}${esc(m.name)}</button>`).join('')}</div></div>
     <div class="fg"><label class="fl">Statut</label><div class="opts">${SSTAT.map(([k, l, c]) => `<button class="opt ${s.status === k ? 'on' : ''}" data-a="opt" data-g="status" data-v="${k}"><span class="dotc" style="background:${c}"></span>${l}</button>`).join('')}</div></div>
     <div class="f2"><div class="fg"><label class="fl">Relation</label><div class="opts"><button class="opt ${s.kind === 'rec' ? 'on' : ''}" data-a="opt" data-g="kind" data-v="rec">Partenaire récurrent</button><button class="opt ${s.kind === 'one' ? 'on' : ''}" data-a="opt" data-g="kind" data-v="one">Ponctuel</button></div></div>
@@ -2958,6 +2827,8 @@ const ACT = {
   },
   'supa-off': () => { if (!confirm('Déconnecter Supabase sur cet appareil ? Les données restent en ligne.')) return; LS.del('sj4:supa'); Store.init(); COLLS.forEach(k => { const c = LS.get('sj4c:' + k); if (c) LS.set('sj4:' + k, c); }); render(); },
   'supa-pull': () => pullAll().then(() => toast('À jour')),
+  'acc': el => { UI.acc = UI.acc === el.dataset.t ? null : el.dataset.t; render(); },
+  'logout': () => { if (confirm('Se déconnecter sur cet appareil ?')) logout(); },
   'sto-tab': el => { UI.stoTab = el.dataset.v; render(); },
   'api-on': async () => {
     const url = $('#api-url').value.trim(), key = $('#api-key').value;
@@ -3145,8 +3016,45 @@ document.addEventListener('keydown', e => {
 document.addEventListener('focusout', e => { if (e.target === MN.input) setTimeout(() => { if (document.activeElement !== MN.input) mnClose(); }, 120); }, true);
 window.addEventListener('scroll', () => mnClose(), true);
 
+
+function showLogin(msg) {
+  if ($('#login')) { const e = $('#login .lg-err'); if (e && msg) e.textContent = msg; return; }
+  const cfg = supaCfg(), me = LS.get('sj4:me') || '';
+  const d = document.createElement('div'); d.id = 'login'; d.className = 'login';
+  d.innerHTML = `<div class="lg-card"><div class="lg-logo"><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FscXVlXzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE4NjguNzIgMTg3NC4yMiI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7fTwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYWxxdWVfMS0yIj48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xNzYxLjc3LDY5MC43NmMxMTMuOTEtMTIzLjk5LDEzNC4zNS0zMzAuMzUsNTguMzQtNDc0LjAyQzE3NDMuOTMsNzIuNzcsMTU4MC4zNi0xNS4wNywxNDEyLjcxLDMuMDljLTEyMS42LDEzLjE3LTIyNS43Nyw2My4zOC0yOTYuMDUsMTY3LjUxLTMyLjgzLDQ4LjY0LTIwLjcsMTA0LjE1LDIzLjExLDEzNy45Nyw0Mi40NSwzMi43OCw4NS41NywyNy45NiwxMjkuOTctMTQuNzcsNy44Ny03LjU3LDE0Ljk2LTE1Ljk0LDIyLjUxLTIzLjg1LDY0LjkzLTY4LjAyLDE1OS45Mi04Ni4yLDI0NS4yNy00Ni45NiwxMjcuMDEsNTguMzksMTY2LjcsMjE0Ljc4LDg0LjU3LDMzOC4zMS0xMTguNDYsMTc4LjE4LTIzOC4xNywzNTUuNTQtMzU2LjkyLDUzMy41NC00MS4zMiw2MS45NC04MS4zNSwxMjQuNzMtMTIxLjk2LDE4Ny4xM002OTcuNzcsMTEzLjQzQzYxMi4yMiwyOS4yOCw1MDMuODUtNy4wMSwzODQuOCwxLjExLDExMy4yNywxOS42NS01NS44MSwyNjguNTksMTYuOTEsNTM4LjE0YzIzLjA5LDg1LjU4LDY1LjEzLDE1OC45OSwxNDEuNjcsMjA3LjU4LDQ2Ljc1LDI5LjY4LDEwMS4yMSwxOC42NiwxMzQuNzgtMjMuMjQsMjguOTItMzYuMDksMjUuNzktODkuOTUtOC0xMjguNzgtOS4yMS0xMC41OC0yMC4wOS0xOS42OS0yOS41Ny0zMC4wNS03My42OC04MC41My04MC45NC0xODAuNzktMTkuNzQtMjcwLDU4Ljg4LTg1Ljg0LDE2Mi4zMi0xMTYuNTIsMjYxLTc1LjM5LDI4LjY1LDExLjk0LDU2LjEsMjcuNjksODIuMjMsNDQuNTgsMTcwLjU2LDExMC4yNSwzNDAuNzcsMjIxLjA0LDUxMC43NCwzMzIuMTgsNzEuMzYsNDYuNjYsMTQxLjg3LDk0LjYzLDIxMi43NiwxNDJNMTA0NS43LDE2NDEuODRjNDIuNSw0My41Myw4Mi4wMyw5MS4yNywxMjkuOTIsMTI3Ljk4LDE0Mi43OCwxMDkuNDYsMzAwLjksMTM3Ljk4LDQ2NS43OCw1Ny4yNywxNTguNDktNzcuNTgsMjMzLjM2LTIxMS44NywyMjYuOTQtMzg3LjUtNC4zNi0xMTkuMi01Ni42NS0yMTkuMzMtMTQyLjQ0LTMwMC45Ny00Mi45Mi00MC44NC0xMDEuNzMtMzYuOTctMTQyLjc4LDQuMjctNDEuNTksNDEuNzgtNDIuMjYsODMuMjctMi4yOSwxMzIuNTUsMTkuNjEsMjQuMTksNDEuNjgsNDYuODksNTguMDIsNzMuMTMsNDUuMjYsNzIuNyw0NC4zOCwxNDguMzQsMy4zMywyMjIuMTUtMzkuOTQsNzEuODItMTA4LjE4LDEwMC43My0xODUuMzMsOTUuODUtNDYuMjItMi45My05NS4zMy0xOS40My0xMzUuNzYtNDIuNjUtMTAxLjQ3LTU4LjI5LTE5OS4wMi0xMjMuNDQtMjk3LjYzLTE4Ni42NC0xNDUuNzUtOTMuNDMtMjkxLjA1LTE4Ny41NS00MzYuNTQtMjgxLjM4TTEzNy40NSwxMTQ4Ljk4Yy03Ny41Niw3Ni4xMi0xMTkuMzgsMTY1LjU2LTEzMi43OSwyNzEuMjQtMjMuMzgsMTg0LjIxLDY4Ljk5LDM0NC43OCwyNDMuNDMsNDIxLjYsMTU5Ljg2LDcwLjQsMzY5Ljc2LDIyLjU0LDQ3OS40OC0xMDkuMzQsMzQuODUtNDEuODksMzYuMjgtOTYuNjEsMy40Ni0xMzIuMTYtMzMuNTMtMzYuMzEtODcuNzEtNDAuOTItMTMyLjIyLTkuOC0xOS4xNCwxMy4zOS0zNS44NCwzMC4yMS01NC42MSw0NC4xOS03NS43OCw1Ni40OS0xOTMuOTgsNTIuOTUtMjcxLjU5LTcuNTgtNzcuNDktNjAuNDQtMTAzLjM0LTE1OS45NS02Mi4wNi0yNTEuODIsMTUuODctMzUuMzIsMzcuMzEtNjguNDYsNTguNzktMTAwLjksMTMyLjcyLTIwMC40LDI2Ni4zLTQwMC4yMywzOTkuMjMtNjAwLjUsMTkuNDktMjkuMzYsMzYuOTctNjAuMDQsNTUuMzgtOTAuMTEiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTE0My4yLDEyODEuOTZjNDAuNjItNjIuNCw4MC42NS0xMjUuMTksMTIxLjk2LTE4Ny4xMywxMTguNzQtMTc4LDIzOC40NS0zNTUuMzUsMzU2LjkyLTUzMy41NCw4Mi4xMy0xMjMuNTMsNDIuNDQtMjc5LjkyLTg0LjU3LTMzOC4zMS04NS4zNS0zOS4yNC0xODAuMzQtMjEuMDYtMjQ1LjI3LDQ2Ljk2LTcuNTUsNy45MS0xNC42NCwxNi4yOC0yMi41MSwyMy44NS00NC4zOSw0Mi43NC04Ny41MSw0Ny41NS0xMjkuOTcsMTQuNzctNDMuODEtMzMuODItNTUuOTMtODkuMzMtMjMuMTEtMTM3Ljk3LDcwLjI3LTEwNC4xMywxNzQuNDQtMTU0LjM0LDI5Ni4wNS0xNjcuNTEsMTY3LjY2LTE4LjE2LDMzMS4yMiw2OS42OCw0MDcuNCwyMTMuNjUsNzYuMDIsMTQzLjY3LDU1LjU3LDM1MC4wMy01OC4zNCw0NzQuMDItMTE3LjI0LDEyNy42MS0yNDMuMDksMjQ3LjM2LTM2NS42MywzNzAuMSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMzAyLjc4LDczNy4wMmMtNzAuODktNDcuMzctMTQxLjQtOTUuMzQtMjEyLjc2LTE0Mi0xNjkuOTctMTExLjE1LTM0MC4xOC0yMjEuOTQtNTEwLjc0LTMzMi4xOC0yNi4xMy0xNi44OS01My41OC0zMi42NC04Mi4yMy00NC41OC05OC42OC00MS4xMy0yMDIuMTItMTAuNDQtMjYxLDc1LjM5LTYxLjE5LDg5LjIxLTUzLjkzLDE4OS40NywxOS43NCwyNzAsOS40OCwxMC4zNiwyMC4zNywxOS40NywyOS41NywzMC4wNSwzMy43OSwzOC44MywzNi45Miw5Mi43LDgsMTI4Ljc4LTMzLjU3LDQxLjktODguMDMsNTIuOTItMTM0Ljc4LDIzLjI0LTc2LjU0LTQ4LjU5LTExOC41OC0xMjEuOTktMTQxLjY3LTIwNy41OEMtNTUuODEsMjY4LjU5LDExMy4yNywxOS42NSwzODQuOCwxLjExYzExOS4wNS04LjEzLDIyNy40MiwyOC4xNywzMTIuOTcsMTEyLjMxLDE0OC4wOCwxNDUuNjUsMjkyLjMsMjk1LjIyLDQzNy45OCw0NDMuMzEiLz48cGF0aCBmaWxsPSIjZmZmIiBkPSJNNTg2LjkyLDExNTUuODljMTQ1LjQ5LDkzLjgzLDI5MC43OSwxODcuOTYsNDM2LjU0LDI4MS4zOCw5OC42LDYzLjIsMTk2LjE2LDEyOC4zNSwyOTcuNjMsMTg2LjY0LDQwLjQyLDIzLjIyLDg5LjU0LDM5LjczLDEzNS43Niw0Mi42NSw3Ny4xNCw0Ljg4LDE0NS4zOC0yNC4wMywxODUuMzMtOTUuODUsNDEuMDUtNzMuODEsNDEuOTMtMTQ5LjQ1LTMuMzMtMjIyLjE1LTE2LjM0LTI2LjI0LTM4LjQtNDguOTQtNTguMDItNzMuMTMtMzkuOTctNDkuMjgtMzkuMy05MC43NywyLjI5LTEzMi41NSw0MS4wNS00MS4yNCw5OS44Ny00NS4xMSwxNDIuNzgtNC4yNyw4NS43OCw4MS42NCwxMzguMDgsMTgxLjc3LDE0Mi40NCwzMDAuOTcsNi40MiwxNzUuNjMtNjguNDUsMzA5LjkyLTIyNi45NCwzODcuNS0xNjQuODgsODAuNzEtMzIzLDUyLjE5LTQ2NS43OC01Ny4yNy00Ny44OS0zNi43MS04Ny40Mi04NC40NS0xMjkuOTItMTI3Ljk4Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcyMy45NCw1ODMuOGMtMTguNDEsMzAuMDctMzUuODksNjAuNzUtNTUuMzgsOTAuMTEtMTMyLjkyLDIwMC4yNy0yNjYuNTEsNDAwLjEtMzk5LjIzLDYwMC41LTIxLjQ4LDMyLjQzLTQyLjkyLDY1LjU4LTU4Ljc5LDEwMC45LTQxLjI3LDkxLjg3LTE1LjQzLDE5MS4zOCw2Mi4wNiwyNTEuODIsNzcuNiw2MC41MywxOTUuOCw2NC4wNywyNzEuNTksNy41OCwxOC43Ni0xMy45OSwzNS40Ni0zMC44MSw1NC42MS00NC4xOSw0NC41MS0zMS4xMiw5OC42OS0yNi41MSwxMzIuMjIsOS44LDMyLjgyLDM1LjU1LDMxLjM5LDkwLjI3LTMuNDYsMTMyLjE2LTEwOS43MiwxMzEuODgtMzE5LjYyLDE3OS43NC00NzkuNDgsMTA5LjM0QzczLjY0LDE3NjUtMTguNzMsMTYwNC40Myw0LjY2LDE0MjAuMjNjMTMuNDItMTA1LjY4LDU1LjIzLTE5NS4xMywxMzIuNzktMjcxLjI0Ii8+PC9nPjwvc3ZnPg==" alt=""></div><div class="lg-t">Silver Jersey</div><div class="lg-s">Dashboard</div>
+    <div class="lg-who">${members().map(m => `<button class="lg-m ${me === m.name ? 'on' : ''}" data-n="${esc(m.name)}">${av(m.name, 'l')}<span>${esc(m.name)}</span></button>`).join('')}</div>
+    ${cfg || !/[?&]setup\b/.test(location.search) ? '' : `<input class="fi lg-in" id="lg-url" placeholder="URL du projet Supabase"><input class="fi lg-in" id="lg-key" placeholder="Clé publishable">`}
+    <input type="email" name="username" autocomplete="username" value="${TEAM_EMAIL}" style="position:absolute;opacity:0;pointer-events:none;height:0;width:0" tabindex="-1" aria-hidden="true">
+    <input class="fi lg-in" id="lg-pw" name="password" type="password" placeholder="Mot de passe" autocomplete="current-password">
+    <button class="btn btn-dark lg-go" id="lg-go">Entrer</button><div class="lg-err">${esc(msg || '')}</div></div>`;
+  document.body.appendChild(d);
+  let who = me;
+  d.querySelectorAll('.lg-m').forEach(b => b.onclick = () => { who = b.dataset.n; d.querySelectorAll('.lg-m').forEach(x => x.classList.toggle('on', x === b)); $('#lg-pw').focus(); });
+  const go = async () => {
+    const err = d.querySelector('.lg-err'); err.textContent = '';
+    if (!who) return err.textContent = 'Choisis ton profil';
+    const c = cfg || { url: (($('#lg-url') || {}).value || '').trim(), key: (($('#lg-key') || {}).value || '').trim() };
+    const pw = $('#lg-pw').value;
+    if (!c.url || !c.key) return err.textContent = 'Dashboard pas encore configuré';
+    if (!pw) return err.textContent = 'Mot de passe manquant';
+    $('#lg-go').disabled = true; $('#lg-go').textContent = 'Connexion...';
+    try {
+      await supaAuth(c, { email: TEAM_EMAIL, password: pw }, 'password');
+      if (!cfg) LS.set('sj4:supa', c);
+      LS.set('sj4:me', who); location.reload();
+    } catch (e) { err.textContent = String(e.message).includes('password') ? 'Mot de passe incorrect' : 'Connexion impossible'; $('#lg-go').disabled = false; $('#lg-go').textContent = 'Entrer'; }
+  };
+  $('#lg-go').onclick = go; $('#lg-pw').addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+  setTimeout(() => (me ? $('#lg-pw') : d.querySelector('.lg-m')).focus(), 50);
+}
+function logout() {
+  AUTH.clear(); [...COLLS, 'settings'].forEach(k => { LS.del('sj4c:' + k); LS.del('sj4:' + k); });
+  location.reload();
+}
+
 async function boot() {
   Store.init();
+  if (Store.mode !== 'supa') { showLogin(); return; }
   UI.me = LS.get('sj4:me') || null;
   if (Store.mode !== 'local') {
     COLLS.forEach(k => { const c = LS.get('sj4c:' + k); if (c) D[k] = c; });
